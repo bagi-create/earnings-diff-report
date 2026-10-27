@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChangeMeta, EvidenceLinks, KIND_LABEL, Redline, ToneRuler } from "@/components/parts";
+import { ChangeMeta, EvidenceLinks, isMeaningfulSignal, KIND_LABEL, Redline, ToneRuler } from "@/components/parts";
 import { toMarkdownReport } from "@/lib/report";
 import type { AnalysisResult, Change, EvidencePoint, SummarizeResponse } from "@/lib/types";
 
@@ -100,7 +100,7 @@ export default function ResultView(props: {
     URL.revokeObjectURL(url);
   }
 
-  const changedSignals = result.signals.filter((s) => s.changed);
+  const changedSignals = result.signals.filter((s) => s.changed && isMeaningfulSignal(s));
   const ruleHeadline = changedSignals.length
     ? changedSignals.map((s) => `${s.label}は${s.after}`).join("、") + "。"
     : result.previousTone.label === result.currentTone.label
@@ -129,16 +129,16 @@ export default function ResultView(props: {
         <ToneRuler previous={result.previousTone} current={result.currentTone} />
         <ul className="signals">
           {result.signals
-            .filter((s) => s.changed || s.after !== "記載なし")
+            .filter((s) => s.after !== "記載なし")
             .map((s) => (
-              <li key={s.key} className={`signal ${s.changed ? "is-changed" : ""} dir-${s.direction}`}>
+              <li key={s.key} className={`signal ${s.changed && isMeaningfulSignal(s) ? "is-changed" : ""} dir-${s.direction}`}>
                 <span className="signal__label">{s.label}</span>
-                {s.changed ? (
+                {s.changed && isMeaningfulSignal(s) ? (
                   <span>
                     <s>{s.before}</s> → <strong>{s.after}</strong>
                   </span>
                 ) : (
-                  <span>{s.after}（変化なし）</span>
+                  <span>{s.after}{s.changed ? "" : "（変化なし）"}</span>
                 )}
               </li>
             ))}

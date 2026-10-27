@@ -1,0 +1,217 @@
+{
+  "code": "6503",
+  "name": "三菱電機",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.mitsubishielectric.co.jp/investors/data/financial-result/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年度 第1四半期 連結決算概要（決算短信）",
+      "date": "2026-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2026/pdf/0731_co1.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年度 第1四半期 決算説明会資料",
+      "date": "2026-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2026/pdf/0731_co2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年度 連結決算概要（決算短信）",
+      "date": "2026-04-28",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2026/pdf/0428_co1.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年度 決算説明会資料",
+      "date": "2026-04-28",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2026/pdf/0428_co2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年度 第3四半期 連結決算概要（決算短信）",
+      "date": "2026-02-03",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2026/pdf/0203-a1.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年度 第3四半期 決算説明会資料",
+      "date": "2026-02-03",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2026/pdf/0203-a2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年度 第2四半期 連結決算概要（決算短信）",
+      "date": "2025-10-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/1031-a1.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年度 第2四半期 決算説明会資料",
+      "date": "2025-10-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/1031-a2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年度 第1四半期 連結決算概要（決算短信）",
+      "date": "2025-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/0731-1.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年度 第1四半期 決算説明会資料",
+      "date": "2025-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/0731-2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年度 連結決算概要（決算短信）",
+      "date": "2025-04-28",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/0428-a1.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年度 決算説明会資料",
+      "date": "2025-04-28",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/0428-a2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年度 第3四半期 連結決算概要（決算短信）",
+      "date": "2025-02-04",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/0204-1.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年度 第3四半期 決算説明会資料",
+      "date": "2025-02-04",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2025/pdf/0204-2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年度 第2四半期 連結決算概要（決算短信）",
+      "date": "2024-10-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/1031-a1.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年度 第2四半期 決算説明会資料",
+      "date": "2024-10-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/1031-a2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年度 第1四半期 連結決算概要（決算短信）",
+      "date": "2024-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/0731-b1.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年度 第1四半期 決算説明会資料",
+      "date": "2024-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/0731-b2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2023年度 連結決算概要（決算短信）",
+      "date": "2024-04-26",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/0426-1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2023年度 決算説明会資料",
+      "date": "2024-04-26",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/0426-2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2023年度 第3四半期 連結決算概要（決算短信）",
+      "date": "2024-02-05",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/0205-1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2023年度 第3四半期 決算説明会資料",
+      "date": "2024-02-05",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2024/pdf/0205-2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2023年度 第2四半期 連結決算概要（決算短信）",
+      "date": "2023-10-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2023/pdf/1031-a1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2023年度 第2四半期 決算説明会資料",
+      "date": "2023-10-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2023/pdf/1031-a2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2023年度 第1四半期 連結決算概要（決算短信）",
+      "date": "2023-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2023/pdf/0731-1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2023年度 第1四半期 決算説明会資料",
+      "date": "2023-07-31",
+      "url": "https://www.mitsubishielectric.co.jp/ja/pr/2023/pdf/0731-2.pdf"
+    }
+  ],
+  "notes": "The 決算短信 is labelled '20XX年度 第n四半期 連結決算概要' on the IR page (row heading 決算短信); the PDF itself is the full 決算短信〔IFRS〕（連結）. Presentation = 決算説明会資料 (the script version 決算説明会資料（スクリプト付き） was not used). Q2 FY2027 not yet published as of 2026-10-27."
+}

@@ -1,0 +1,217 @@
+{
+  "code": "8316",
+  "name": "三井住友フィナンシャルグループ",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.smfg.co.jp/investor/financial/latest_statement.html",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期第1四半期 決算短信",
+      "date": "2026-07-31",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2027_3/2027_1q_01.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2027年3月期第1四半期 実績の概要",
+      "date": "2026-07-31",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2027_3/2027_1q_03.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期通期 決算短信",
+      "date": "2026-05-13",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_fy_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2026年3月期通期 実績の概要",
+      "date": "2026-05-13",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_fy_03.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期第3四半期 決算短信",
+      "date": "2026-01-30",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_3q_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2026年3月期第3四半期 実績の概要",
+      "date": "2026-01-30",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_3q_03.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期中間期 決算短信",
+      "date": "2025-11-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_2q_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年3月期中間期 実績の概要",
+      "date": "2025-11-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_2q_03.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期第1四半期 決算短信",
+      "date": "2025-07-31",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_1q_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年3月期第1四半期 実績の概要",
+      "date": "2025-07-31",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2026_3/2026_1q_03.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期通期 決算短信",
+      "date": "2025-05-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_fy_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年3月期通期 実績の概要",
+      "date": "2025-05-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_fy_03.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期第3四半期 決算短信",
+      "date": "2025-01-29",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_3q_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年3月期第3四半期 実績の概要",
+      "date": "2025-01-29",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_3q_03.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期中間期 決算短信",
+      "date": "2024-11-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_2q_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年3月期中間期 実績の概要",
+      "date": "2024-11-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_2q_03.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期第1四半期 決算短信",
+      "date": "2024-08-02",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_1q_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年3月期第1四半期 実績の概要",
+      "date": "2024-08-02",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2025_3/2025_1q_03.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期通期 決算短信",
+      "date": "2024-05-15",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_fy_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年3月期通期 実績の概要",
+      "date": "2024-05-15",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_fy_03.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期第3四半期 決算短信",
+      "date": "2024-02-01",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_3q_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年3月期第3四半期 実績の概要",
+      "date": "2024-02-01",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_3q_03.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期中間期 決算短信",
+      "date": "2023-11-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_2q_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年3月期中間期 実績の概要",
+      "date": "2023-11-14",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_2q_03.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年3月期第1四半期 決算短信",
+      "date": "2023-07-31",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_1q_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年3月期第1四半期 実績の概要",
+      "date": "2023-07-31",
+      "url": "https://www.smfg.co.jp/investor/financial/latest_statement/2024_3/2024_1q_03.pdf"
+    }
+  ],
+  "notes": "日本基準。presentationは毎四半期の「実績の概要」スライド（例: 2025年度上期実績）。第2四半期・通期には別に「決算説明資料」（数値資料）と投資家説明会資料（*_setumei.pdf）もあるが、毎期そろって出ている実績の概要を採用。IRページに日付の表示はなく、日付はPDF表紙から取得。2024年3月期以前は past_statement.html に掲載。2027年3月期第2四半期は未公表。"
+}

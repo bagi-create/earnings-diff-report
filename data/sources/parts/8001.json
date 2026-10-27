@@ -1,0 +1,201 @@
+{
+  "code": "8001",
+  "name": "伊藤忠商事",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.itochu.co.jp/ja/ir/financial_statements/index.html",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年度 第1四半期 決算短信",
+      "date": "2026-08-03",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2027/__icsFiles/afieldfile/2026/08/06/27_1st_01_2.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年度 第1四半期 決算説明資料（第1四半期）",
+      "date": "2026-08-03",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2027/__icsFiles/afieldfile/2026/08/07/27_1st_02.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年度 通期 決算短信",
+      "date": "2026-05-01",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2026/05/01/26_ended_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年度 決算実績・2026年度 経営計画説明資料",
+      "date": "2026-05-01",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2026/05/14/26_ended_02_1.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年度 第3四半期 決算短信",
+      "date": "2026-02-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2026/02/13/26_3rd_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年度 第3四半期 決算説明資料（第3四半期）",
+      "date": "2026-02-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2026/02/12/26_3rd_02.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年度 第2四半期 決算短信",
+      "date": "2025-11-05",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2025/11/05/26_2nd_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年度 第2四半期 決算説明資料（第2四半期）",
+      "date": "2025-11-05",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2025/11/11/26_2nd_02.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年度 第1四半期 決算短信",
+      "date": "2025-08-01",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2025/08/06/26_1st_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年度 第1四半期 決算説明資料（第1四半期）",
+      "date": "2025-08-01",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2026/__icsFiles/afieldfile/2025/08/08/26_1st_02.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年度 通期 決算短信",
+      "date": "2025-05-02",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2025/05/02/25_ended_01_1.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年度 決算実績・2025年度 経営計画説明資料",
+      "date": "2025-05-02",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2026/02/09/25_ended_02.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年度 第3四半期 決算短信",
+      "date": "2025-02-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2025/02/12/25_3rd_01_1.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年度 第3四半期 決算説明資料（第3四半期）",
+      "date": "2025-02-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2025/02/10/25_3rd_02.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年度 第2四半期 決算短信",
+      "date": "2024-11-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2024/11/06/25_2nd_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年度 第2四半期 決算説明資料（第2四半期）",
+      "date": "2024-11-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2024/11/11/25_2nd_02_2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年度 第1四半期 決算短信",
+      "date": "2024-08-05",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2024/09/30/25_1st_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年度 第1四半期 決算説明資料（第1四半期）",
+      "date": "2024-08-05",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2025/__icsFiles/afieldfile/2024/08/09/25_1st_02_2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2023年度 通期 決算短信",
+      "date": "2024-05-08",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2024/__icsFiles/afieldfile/2024/05/08/24_ended_01_1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2023年度 通期 決算・経営計画説明資料",
+      "date": "2024-05-08",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2024/__icsFiles/afieldfile/2024/06/06/24_ended_02.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2023年度 第3四半期 決算短信",
+      "date": "2024-02-05",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2024/__icsFiles/afieldfile/2024/02/05/24_3rd_01_1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2023年度 第3四半期 決算説明資料（第3四半期）",
+      "date": "2024-02-05",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2024/__icsFiles/afieldfile/2024/06/06/24_3rd_02.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2023年度 第2四半期 決算短信",
+      "date": "2023-11-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2024/__icsFiles/afieldfile/2023/11/06/24_2nd_01_1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2023年度 第2四半期 決算説明資料（第2四半期）",
+      "date": "2023-11-06",
+      "url": "https://www.itochu.co.jp/ja/ir/financial_statements/2024/__icsFiles/afieldfile/2024/06/06/24_2nd_02.pdf"
+    }
+  ],
+  "notes": "Itochu labels fiscal years by start year (「2026年度」= 2027年3月期). Per-year pages: https://www.itochu.co.jp/ja/ir/financial_statements/<fy>/index.html. The page shows only 「決算短信」 as link text, so titles are composed from the page's 年度/四半期 headings plus link text. Dates are not shown on the library page; they are the 決算公表 dates from Itochu's IR news list (/ja/ir/news/<year>/index.html). Since FY2025 Q1, Itochu re-discloses the Q1/Q3 決算短信 after the auditor's interim review (e.g. FY2027 Q1 reissued 2026-08-06, FY2026 Q3 2026-02-13, FY2026 Q1 2025-08-06, FY2025 Q3 2025-02-12, FY2025 Q1 2024-08-09); the library links point to that reviewed version, while `date` is the original announcement date. Presentation = 「決算説明資料（第N四半期）」 for Q1-Q3 and the 決算実績・経営計画説明資料 for Q4 (not the スクリプト付 version, Q&A, or セグメント別成長期待領域 supplements). Several presentation PDFs were re-uploaded later (afieldfile dates 2024/06/06, 2026/02/09). Newest published: FY2027 Q1 (2026年度第1四半期, 2026-08-03); FY2027 Q2 not yet published as of 2026-10-27."
+}

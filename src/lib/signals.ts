@@ -21,7 +21,7 @@ export function categorize(sentence: string): string[] {
 
 /** Words that make a change matter regardless of how much text moved. */
 export const MATERIAL_TERMS =
-  /上方修正|下方修正|増配|減配|復配|無配|特別損失|減損|過去最高|最高益|赤字|黒字転換|自己株式の取得|据え置|継続企業|中期経営計画/;
+  /上方修正|下方修正|増配|減配|復配|無配|特別損失|減損|過去最高|最高益|赤字|黒字転換|自己株式の取得[^。]{0,30}決議|決議[^。]{0,40}自己株式の取得|据え置|継続企業|中期経営計画/;
 
 type State = { label: string; direction: 1 | 0 | -1 };
 
@@ -30,6 +30,9 @@ function guidanceState(text: string): State {
     return { label: "上方修正", direction: 1 };
   if (/(業績予想|通期|予想)[^。]{0,40}下方修正|下方修正[^。]{0,20}(いた|する|しま)/.test(text))
     return { label: "下方修正", direction: -1 };
+  // The summary page of a 決算短信 states it explicitly: 「業績予想からの修正の有無:有/無」.
+  const revised = text.match(/業績予想からの修正の有無[:：]?\s*(有|無)/);
+  if (revised) return revised[1] === "有" ? { label: "修正あり", direction: 0 } : { label: "修正なし", direction: 0 };
   if (/(業績予想|通期|予想)[^。]{0,40}(据え置|変更(は|も)?(あり|して)?(ません|おりません)|修正(は|も)?(あり|して)?(ません|おりません))/.test(text))
     return { label: "据え置き", direction: 0 };
   if (/(業績予想|通期の見通し)/.test(text)) return { label: "言及あり", direction: 0 };
@@ -78,17 +81,28 @@ const METRIC_NAMES: Array<[name: string, pattern: string]> = [
   ["売上高", "(?:売上高|売上収益|営業収益)"],
   ["営業利益", "(?:営業利益|営業損失)"],
   ["経常利益", "(?:経常利益|経常損失)"],
-  ["純利益", "(?:親会社株主に帰属する(?:当期|四半期)?純利益|(?:当期|四半期)純利益)"],
+  ["純利益", "(?:親会社株主に帰属する(?:当期|四半期|中間)?純利益|親会社の所有者に帰属する(?:当期|四半期|中間)?利益|(?:当期|四半期|中間)純利益)"],
 ];
 
 const AMOUNT = "([△▲-]?[0-9][0-9,]*(?:\\.[0-9]+)?)\\s*(百万円|億円|千円|万円|兆円)";
 const YOY = "(?:前年同期比|前期比|前年比)\\s*([0-9.,]+%\\s*[増減])";
 
+const YOY_BEFORE = "(?:前年同期比|前期比|前年比|前年同期に比べ|前期に比べ|前年に比べ)\\s*([0-9.,]+%\\s*[増減])の";
+// Not preceded by の/・ so that segment figures ("エナジー・パワーの売上収益") are skipped.
+const NOT_SEGMENT = "(?<![の・と])";
+
 function findMetric(text: string, pattern: string) {
-  const re = new RegExp(`${pattern}[はがも]?[、,]?\\s*${AMOUNT}(?:[^。]{0,8}?${YOY})?`);
-  const match = text.match(re);
-  if (!match) return undefined;
-  return { value: `${match[1]}${match[2]}`, yoy: match[3]?.replace(/\s/g, "") };
+  // "売上高は1,318億円(前年同期比6.3%増)" — amount first.
+  const amountFirst = text.match(new RegExp(`${NOT_SEGMENT}${pattern}[はがも]?[、,]?\\s*${AMOUNT}(?:[^。]{0,8}?${YOY})?`));
+  // "売上収益は前年同期比2.2%増の902,778百万円" — change first (common in IFRS reports).
+  const changeFirst = text.match(new RegExp(`${NOT_SEGMENT}${pattern}は?[、,]?[^。]{0,12}?${YOY_BEFORE}\\s*${AMOUNT}`));
+  const pick =
+    amountFirst && (!changeFirst || (amountFirst.index ?? 0) <= (changeFirst.index ?? 0))
+      ? { value: `${amountFirst[1]}${amountFirst[2]}`, yoy: amountFirst[3] }
+      : changeFirst
+        ? { value: `${changeFirst[2]}${changeFirst[3]}`, yoy: changeFirst[1] }
+        : undefined;
+  return pick && { value: pick.value, yoy: pick.yoy?.replace(/\s/g, "") };
 }
 
 /** Best-effort extraction of headline figures written in narrative sentences. */

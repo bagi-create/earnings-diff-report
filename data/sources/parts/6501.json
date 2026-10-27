@@ -1,0 +1,217 @@
+{
+  "code": "6501",
+  "name": "日立製作所",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.hitachi.com/ja-jp/ir/library/fr/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期 第1四半期 決算短信",
+      "date": "2026-07-29",
+      "url": "https://www.hitachi.com/content/dam/hitachi/global/ja_jp/press/files/2026/07/0729/2026_1Q.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "プレゼンテーション：2027年3月期 第1四半期 連結決算の概要",
+      "date": "2026-07-29",
+      "url": "https://www.hitachi.com/content/dam/hitachi/global/ja_jp/press/files/2026/07/0729/2026_1Qpre.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期 決算短信",
+      "date": "2026-04-27",
+      "url": "https://www.hitachi.com/content/dam/hitachi/global/ja_jp/press/files/2026/04/0427/2025_An.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "プレゼンテーション：2026年3月期 連結決算の概要",
+      "date": "2026-04-27",
+      "url": "https://www.hitachi.com/content/dam/hitachi/global/ja_jp/press/files/2026/04/0427/2025_Anpre.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期 第3四半期 決算短信",
+      "date": "2026-01-29",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2026/01/0129/2025_3Q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "プレゼンテーション：2026年3月期 第3四半期 連結決算の概要",
+      "date": "2026-01-29",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2026/01/0129/2025_3Qpre.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期 第2四半期 決算短信",
+      "date": "2025-10-30",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/10/1030/2025_2Q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "プレゼンテーション：2026年3月期 第2四半期 連結決算の概要",
+      "date": "2025-10-30",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/10/1030/2025_2Qpre.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期 第1四半期 決算短信",
+      "date": "2025-07-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/07/0731/2025_1Q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "プレゼンテーション：2026年3月期 第1四半期 連結決算の概要",
+      "date": "2025-07-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/07/0731/2025_1Qpre.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期 決算短信",
+      "date": "2025-04-28",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/04/0428/2024_An.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "プレゼンテーション：2025年3月期 連結決算の概要",
+      "date": "2025-04-28",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/04/0428/2024_Anpre.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期 第3四半期 決算短信",
+      "date": "2025-01-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/01/0131/2024_3Q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "プレゼンテーション：2025年3月期 第3四半期 連結決算の概要",
+      "date": "2025-01-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2025/01/0131/2024_3Qpre.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期 第2四半期 決算短信",
+      "date": "2024-10-30",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/10/1030/2024_2Q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "プレゼンテーション：2025年3月期 第2四半期 連結決算の概要",
+      "date": "2024-10-30",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/10/1030/2024_2Qpre.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期 第1四半期 決算短信",
+      "date": "2024-07-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/07/0731/2024_1Q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "プレゼンテーション：2025年3月期 第1四半期 連結決算の概要",
+      "date": "2024-07-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/07/0731/2024_1Qpre.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期 決算短信",
+      "date": "2024-04-26",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/04/0426/2023_An.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "プレゼンテーション：2024年3月期 連結決算の概要",
+      "date": "2024-04-26",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/04/0426/2023_Anpre.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期 第3四半期 決算短信",
+      "date": "2024-01-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/01/0131/2023_3Q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "プレゼンテーション：2024年3月期 第3四半期 連結決算の概要",
+      "date": "2024-01-31",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2024/01/0131/2023_3Qpre.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期 第2四半期 決算短信",
+      "date": "2023-10-27",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2023/10/1027/2023_2Q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "プレゼンテーション：2024年3月期 第2四半期 連結決算の概要",
+      "date": "2023-10-27",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2023/10/1027/2023_2Qpre.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年3月期 第1四半期 決算短信",
+      "date": "2023-07-28",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2023/07/0728/2023_1Q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "プレゼンテーション：2024年3月期 第1四半期 連結決算の概要",
+      "date": "2023-07-28",
+      "url": "https://www.hitachi.co.jp/New/cnews/month/2023/07/0728/2023_1Qpre.pdf"
+    }
+  ],
+  "notes": "Q2 FY2027 results are scheduled for 2026-10-28 (not yet published). File naming: YYYY_nQ.pdf / YYYY_An.pdf = 決算短信 (YYYY = Hitachi fiscal year label, e.g. 2026_1Q = 2027年3月期 第1四半期), *pre.pdf = presentation 「連結決算の概要」. For older rows the IR page labels both PDFs '連結決算の概要' in separate columns; the non-'pre' file was confirmed to be the 決算短信 from its cover. Full-year rows also have a separate management-plan deck (f_*pre.pdf, e.g. Inspire 2027) which was not used. The two newest quarters are on the hitachi.com domain, older on hitachi.co.jp. The 決算短信 cover title is drawn as an image in some files, so text extraction may miss the title."
+}

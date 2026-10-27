@@ -1,0 +1,217 @@
+{
+  "code": "6857",
+  "name": "アドバンテスト",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.advantest.com/ja/investors/ir-library/result/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年度 第1四半期 決算短信",
+      "date": "2026-07-29",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2026_1Q.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年度 第1四半期 決算説明会資料",
+      "date": "2026-07-29",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/JE_BIZ_260729_slide.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年度 決算短信",
+      "date": "2026-04-27",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2025_FN.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年度 決算説明会資料",
+      "date": "2026-04-27",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/JE_BIZ_260427_slide.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年度 第3四半期 決算短信",
+      "date": "2026-01-28",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2025_3Q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年度 第3四半期 決算説明会資料",
+      "date": "2026-01-28",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/JE_BIZ_260128_slide.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年度 第2四半期 決算短信",
+      "date": "2025-10-28",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2025_2Q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年度 第2四半期 決算説明会資料",
+      "date": "2025-10-28",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/JE_BIZ_251028_slide.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年度 第1四半期 決算短信",
+      "date": "2025-07-29",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2025_1Q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年度 第1四半期 決算説明会資料",
+      "date": "2025-07-29",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/JE_BIZ_250729_slide.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年度 決算短信",
+      "date": "2025-04-25",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2024_FN.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年度 決算説明会資料",
+      "date": "2025-04-25",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/JE_BIZ_250425_slide.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年度 第3四半期 決算短信",
+      "date": "2025-01-29",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2024_3Q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年度 第3四半期 決算説明会資料",
+      "date": "2025-01-29",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_BIZ_250129_slide.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年度 第2四半期 決算短信",
+      "date": "2024-10-30",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2024_2Q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年度 第2四半期 決算説明会資料",
+      "date": "2024-10-30",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_BIZ_241030_slide.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年度 第1四半期 決算短信",
+      "date": "2024-07-31",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2024_1Q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年度 第1四半期 決算説明会資料",
+      "date": "2024-07-31",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_BIZ_240731_slide.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2023年度 決算短信",
+      "date": "2024-04-26",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2023_FN.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2023年度 決算説明会資料",
+      "date": "2024-04-26",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_BIZ_240426_slide.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2023年度 第3四半期 決算短信",
+      "date": "2024-01-31",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2023_3Q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2023年度 第3四半期 決算説明会資料",
+      "date": "2024-01-31",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_BIZ_240131_slide.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2023年度 第2四半期 決算短信",
+      "date": "2023-10-31",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2023_2Q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2023年度 第2四半期 決算説明会資料",
+      "date": "2023-10-31",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_BIZ_231031_slide.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2023年度 第1四半期 決算短信",
+      "date": "2023-07-26",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2023_1Q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2023年度 第1四半期 決算説明会資料",
+      "date": "2023-07-26",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_BIZ_230726_slide.pdf"
+    }
+  ],
+  "notes": "Q2 FY2027 results are scheduled for 2026-10-28 (not yet published). From 2025年3月期 通期 (April 2025) onward the 説明会資料 linked on the Japanese page is a bilingual Japanese/English deck (JE_BIZ_*_slide.pdf); earlier decks are Japanese-only (J_BIZ_*). The note version (ノート付) and Q&A were not used."
+}

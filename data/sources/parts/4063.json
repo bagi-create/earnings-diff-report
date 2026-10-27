@@ -1,0 +1,113 @@
+{
+  "code": "4063",
+  "name": "信越化学工業",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.shinetsu.co.jp/jp/ir/ir-data/ir-results/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2027年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+      "date": "2026-10-27",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2026/07/20261027_con_J.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期 第1四半期決算短信〔日本基準〕（連結）",
+      "date": "2026-07-24",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2026/07/20260724_con_J.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期 決算短信〔日本基準〕（連結）",
+      "date": "2026-04-28",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2025/07/20260428_con_J.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期 第3四半期決算短信〔日本基準〕（連結）",
+      "date": "2026-01-27",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2025/07/20260127_con_J.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+      "date": "2025-10-24",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2025/07/20251024_con_J.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期 第1四半期決算短信〔日本基準〕（連結）",
+      "date": "2025-07-24",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2025/07/20250724_con_J.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期 決算短信〔日本基準〕（連結）",
+      "date": "2025-04-25",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2024/07/20250425_con_J.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期 第3四半期決算短信〔日本基準〕（連結）",
+      "date": "2025-01-29",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2024/07/20250129_con_J.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+      "date": "2024-10-25",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2024/07/20241025_con_J.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期 第1四半期決算短信〔日本基準〕（連結）",
+      "date": "2024-07-26",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2024/07/20240726_con_J-1.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期 決算短信〔日本基準〕（連結）",
+      "date": "2024-04-25",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2023/07/20240425_con_J.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期 第3四半期決算短信〔日本基準〕（連結）",
+      "date": "2024-01-26",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2023/07/20240126_con_J.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期 第2四半期（中間期）決算短信〔日本基準〕（連結）",
+      "date": "2023-10-27",
+      "url": "https://www.shinetsu.co.jp/wp-content/uploads/2023/07/20231027_con_J.pdf"
+    }
+  ],
+  "notes": "Japanese GAAP (日本基準). Newest quarter 2027年3月期 第2四半期 was published today (2026-10-27), so 13 consecutive quarters are listed (fy2024 Q2 – fy2027 Q2). No presentations: the company states that since 2020年3月期 第3四半期 the 決算説明資料 content is included inside the 決算短信 itself; the IR briefing page (https://www.shinetsu.co.jp/jp/ir/ir-data/ir-briefing/) only carries Q&A summaries (要旨). Note the WordPress upload folder (e.g. uploads/2025/07/) does not match the disclosure date; the date comes from the file name and the PDF cover."
+}

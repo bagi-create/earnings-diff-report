@@ -1,0 +1,217 @@
+{
+  "code": "4502",
+  "name": "武田薬品工業",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.takeda.com/jp/investors/financial-results/quarterly-results/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年度 第1四半期 決算短信",
+      "date": "2026-07-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1785376909/Global/Investor/Financial-Results/FY2026/Q1/qr2026_q1_er_jp.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年度 第1四半期 プレゼンテーション",
+      "date": "2026-07-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1785395604/Global/Investor/Financial-Results/FY2026/Q1/qr2026_q1_p01_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年度 第4四半期 決算短信（2026年6月5日修正版）",
+      "date": "2026-06-05",
+      "url": "https://assets-dam.takeda.com/image/upload/v1780625951/Global/Investor/Financial-Results/FY2025/Q4_0605/qr2025_q4_er_jp_20260605.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年度 第4四半期 プレゼンテーション（2026年6月5日修正版）",
+      "date": "2026-06-05",
+      "url": "https://assets-dam.takeda.com/image/upload/v1780626057/Global/Investor/Financial-Results/FY2025/Q4_0605/qr2025_q4_p01_jp_20260605.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年度 第3四半期 決算短信",
+      "date": "2026-01-29",
+      "url": "https://assets-dam.takeda.com/image/upload/v1769651177/Global/Investor/Financial-Results/FY2025/Q3/qr2025_q3_er_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年度 第3四半期 プレゼンテーション",
+      "date": "2026-01-29",
+      "url": "https://assets-dam.takeda.com/image/upload/v1769651078/Global/Investor/Financial-Results/FY2025/Q3/qr2025_q3_p01_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年度 第2四半期 決算短信",
+      "date": "2025-10-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1761806529/Global/Investor/Financial-Results/FY2025/Q2/qr2025_q2_er_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年度 第2四半期 プレゼンテーション",
+      "date": "2025-10-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1761805343/Global/Investor/Financial-Results/FY2025/Q2/qr2025_q2_p01_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年度 第1四半期 決算短信",
+      "date": "2025-07-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1753841996/Global/Investor/Financial-Results/FY2025/Q1/qr2025_q1_er_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年度 第1四半期 プレゼンテーション",
+      "date": "2025-07-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1754026635/Global/Investor/Financial-Results/FY2025/Q1/qr2025_q1_p01_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年度 第4四半期 決算短信",
+      "date": "2025-05-08",
+      "url": "https://assets-dam.takeda.com/image/upload/v1746670353/Global/Investor/Financial-Results/FY2024/Q4/qr2024_q4_er_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年度 第4四半期 プレゼンテーション",
+      "date": "2025-05-08",
+      "url": "https://assets-dam.takeda.com/image/upload/v1777365081/Global/Investor/Financial-Results/FY2024/Q4/qr2024_q4_p01_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年度 第3四半期 決算短信",
+      "date": "2025-01-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1738202908/Global/Investor/Financial-Results/FY2024/Q3/qr2024_q3_er_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年度 第3四半期 プレゼンテーション",
+      "date": "2025-01-30",
+      "url": "https://assets-dam.takeda.com/image/upload/v1738202909/Global/Investor/Financial-Results/FY2024/Q3/qr2024_q3_p01_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年度 第2四半期 決算短信",
+      "date": "2024-10-31",
+      "url": "https://assets-dam.takeda.com/image/upload/v1730339289/Global/Investor/Financial-Results/FY2024/Q2/qr2024_q2_er_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年度 第2四半期 プレゼンテーション",
+      "date": "2024-10-31",
+      "url": "https://assets-dam.takeda.com/image/upload/v1730352550/Global/Investor/Financial-Results/FY2024/Q2/qr2024_q2_p01_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年度 第1四半期 決算短信",
+      "date": "2024-07-31",
+      "url": "https://assets-dam.takeda.com/image/upload/Global/Investor/Financial-Results/FY2024/Q1/qr2024_q1_er_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年度 第1四半期 プレゼンテーション",
+      "date": "2024-07-31",
+      "url": "https://assets-dam.takeda.com/image/upload/Global/Investor/Financial-Results/FY2024/Q1/qr2024_q1_p01_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2023年度 第4四半期 決算短信",
+      "date": "2024-05-09",
+      "url": "https://assets-dam.takeda.com/image/upload/v1716273094/Global/Investor/Financial-Results/FY2023/Q4/qr2023_q4_f_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2023年度 第4四半期 プレゼンテーション",
+      "date": "2024-05-09",
+      "url": "https://assets-dam.takeda.com/image/upload/v1716273088/Global/Investor/Financial-Results/FY2023/Q4/qr2023_q4_p01_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2023年度 第3四半期 決算短信",
+      "date": "2024-02-01",
+      "url": "https://assets-dam.takeda.com/image/upload/v1706753641/Global/Investor/Financial-Results/FY2023/Q3/qr2023_q3_f_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2023年度 第3四半期 プレゼンテーション",
+      "date": "2024-02-01",
+      "url": "https://assets-dam.takeda.com/image/upload/v1706769161/Global/Investor/Financial-Results/FY2023/Q3/qr2023_q3_p01_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2023年度 第2四半期 決算短信",
+      "date": "2023-10-26",
+      "url": "https://assets-dam.takeda.com/image/upload/v1699392983/Global/Investor/Financial-Results/FY2023/Q2/qr2023_q2_f_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2023年度 第2四半期 プレゼンテーション",
+      "date": "2023-10-26",
+      "url": "https://assets-dam.takeda.com/image/upload/v1699393405/Global/Investor/Financial-Results/FY2023/Q2/qr2023_q2_p01_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2023年度 第1四半期 決算短信",
+      "date": "2023-07-27",
+      "url": "https://assets-dam.takeda.com/image/upload/v1690431859/Global/Investor/Financial-Results/FY2023/Q1/qr2023_q1_f_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2023年度 第1四半期 プレゼンテーション",
+      "date": "2023-07-27",
+      "url": "https://assets-dam.takeda.com/image/upload/v1690432452/Global/Investor/Financial-Results/FY2023/Q1/qr2023_q1_p01_jp.pdf"
+    }
+  ],
+  "notes": "Past fiscal years are on separate pages (quarterly-results-2025/, -2024/, -2023/). PDFs are hosted on Takeda's official asset CDN assets-dam.takeda.com. Q2 FY2026 (2027年3月期 第2四半期) is scheduled for 2026-10-29, not yet published. FY2025 Q4 (2026年3月期 通期): the documents were revised on 2026-06-05 to reflect a subsequent event (AMITIZA US antitrust jury verdict); the revised versions are listed here (date 2026-06-05). The originally published 2026-05-13 versions are still on the page: tanshin https://assets-dam.takeda.com/image/upload/v1780548416/Global/Investor/Financial-Results/FY2025/Q4_0513/qr2025_q4_er_jp_20260513.pdf and presentation https://assets-dam.takeda.com/image/upload/v1780548416/Global/Investor/Financial-Results/FY2025/Q4_0513/qr2025_q4_p01_jp_20260513.pdf. Dates are taken from the PDF covers. Takeda's PDF text layer duplicates characters on the cover (bold rendering), which may affect text extraction."
+}

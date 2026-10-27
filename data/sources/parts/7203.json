@@ -1,0 +1,217 @@
+{
+  "code": "7203",
+  "name": "トヨタ自動車",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://global.toyota/jp/ir/financial-results/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期 第1四半期決算短信〔IFRS〕（連結）（掲載名: 2027年3月期 第1四半期決算 決算要旨）",
+      "date": "2026-08-04",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_summary_jp.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2027年3月期 第1四半期決算 決算報告プレゼンテーション資料",
+      "date": "2026-08-04",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2027_1q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期 決算短信〔IFRS〕（連結）（掲載名: 2026年3月期 決算 決算要旨）",
+      "date": "2026-05-08",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_4q_summary_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2026年3月期 決算 決算報告プレゼンテーション資料",
+      "date": "2026-05-08",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_4q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期 第3四半期決算短信〔IFRS〕（連結）（掲載名: 2026年3月期 第3四半期決算 決算要旨）",
+      "date": "2026-02-06",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_3q_summary_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2026年3月期 第3四半期決算 決算報告プレゼンテーション資料",
+      "date": "2026-02-06",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_3q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期 第2四半期（中間期）決算短信〔IFRS〕（連結）（掲載名: 2026年3月期 第2四半期決算 決算要旨）",
+      "date": "2025-11-05",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_2q_summary_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年3月期 第2四半期決算 決算報告プレゼンテーション資料",
+      "date": "2025-11-05",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_2q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期 第1四半期決算短信〔IFRS〕（連結）（掲載名: 2026年3月期 第1四半期決算 決算要旨）",
+      "date": "2025-08-07",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_1q_summary_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年3月期 第1四半期決算 決算報告プレゼンテーション資料",
+      "date": "2025-08-07",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_1q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期 決算短信〔IFRS〕（連結）（掲載名: 2025年3月期 決算 決算要旨）",
+      "date": "2025-05-08",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_4q_summary_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年3月期 決算 決算報告プレゼンテーション資料",
+      "date": "2025-05-08",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_4q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期 第3四半期決算短信〔IFRS〕（連結）（掲載名: 2025年3月期 第3四半期決算 決算要旨）",
+      "date": "2025-02-05",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_3q_summary_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年3月期 第3四半期決算 決算報告プレゼンテーション資料",
+      "date": "2025-02-05",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_3q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期 第2四半期（中間期）決算短信〔IFRS〕（連結）（掲載名: 2025年3月期 第2四半期決算 決算要旨）",
+      "date": "2024-11-06",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_2q_summary_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年3月期 第2四半期決算 決算報告プレゼンテーション資料",
+      "date": "2024-11-06",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_2q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期 第1四半期決算短信〔IFRS〕（連結）（掲載名: 2025年3月期 第1四半期決算 決算要旨）",
+      "date": "2024-08-01",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_1q_summary_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年3月期 第1四半期決算 決算報告プレゼンテーション資料",
+      "date": "2024-08-01",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2025_1q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期 決算短信〔IFRS〕（連結）（掲載名: 2024年3月期 決算 決算要旨）",
+      "date": "2024-05-08",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_4q_summary_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年3月期 決算 決算報告プレゼンテーション資料",
+      "date": "2024-05-08",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_4q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期 第3四半期決算短信〔IFRS〕（連結）（掲載名: 2024年3月期 第3四半期決算 決算要旨）",
+      "date": "2024-02-06",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_3q_summary_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年3月期 第3四半期決算 決算報告プレゼンテーション資料",
+      "date": "2024-02-06",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_3q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期 第2四半期決算短信〔IFRS〕（連結）（掲載名: 2024年3月期 第2四半期決算 決算要旨）",
+      "date": "2023-11-01",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_2q_summary_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年3月期 第2四半期決算 決算報告プレゼンテーション資料",
+      "date": "2023-11-01",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_2q_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年3月期 第1四半期決算短信〔IFRS〕（連結）（掲載名: 2024年3月期 第1四半期決算 決算要旨）",
+      "date": "2023-08-01",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_1q_summary_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年3月期 第1四半期決算 決算報告プレゼンテーション資料",
+      "date": "2023-08-01",
+      "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2024_1q_presentation_jp.pdf"
+    }
+  ],
+  "notes": "Current quarter is on https://global.toyota/jp/ir/financial-results/ ; 2021年3月期〜2026年3月期 on https://global.toyota/jp/ir/financial-results/archives/03.html. Toyota posts its 決算短信 under the name '決算要旨' (summary_jp.pdf): a 1-page cover, then the full 決算短信〔IFRS〕（連結） with attachments, followed by a few pages of 補足資料 (supplementary data). Titles/dates were confirmed from the PDF contents. Presentation = '決算報告プレゼンテーション資料' (presentation_jp.pdf); not recorded: the 'スクリプト付き' version, separate executive-message decks (presentation2_jp.pdf) and Q&A. 2027年3月期 第2四半期 (fy2027 q2) not yet published as of 2026-10-27 (Toyota usually reports early November). 13 quarters recorded: fy2024 q1 – fy2027 q1. Hino Motors (日野自動車) left consolidation in fy2027 q1 (ARCHION integration)."
+}

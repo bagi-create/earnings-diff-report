@@ -35,6 +35,21 @@ GEMINI_API_KEY=あなたのAPIキー
 本番（Cloudflare Workers）では `npx wrangler secret put GEMINI_API_KEY` で登録します。
 モデルの選び方・費用の上限の設定は [docs/AI_COST.md](docs/AI_COST.md) を参照してください。
 
+## 画面
+- `/`：銘柄検索（全上場銘柄）と TOPIX Core30 の一覧
+- `/company/[code]`：事前生成した8期分のレポート（パスワード保護。Secret `PROTOTYPE_PASSWORD`）
+- `/compare`：手元のPDFや本文を貼り付けて読み比べる
+
+## Core30 のデータ更新
+
+```bash
+npm run docs:fetch                    # data/sources/core30.json のPDFを取得・抽出（取得済みは飛ばす）
+npm run reports:build                 # 比較とAI要約を作る（.env.local の GEMINI_API_KEY を使う。途中再開できる）
+npm run reports:upload -- --remote    # 本番のKV「REPORTS」へ登録（--local は開発サーバー用）
+```
+
+各社のPDFと抽出テキストは `data/raw`・`data/text` に置き、リポジトリには入れません。
+
 ## 処理の流れ
 
 1. **ブラウザ内**：PDF からテキストを抽出（pdf.js）し、ルールベース解析を実行して結果をすぐ表示する。

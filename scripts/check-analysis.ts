@@ -3,6 +3,8 @@
  * Uses the demo samples, a PDF-like noisy copy of them and a large document.
  */
 import assert from "node:assert/strict";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { analyzeEarningsTexts } from "../src/lib/analyze";
 import { SAMPLES } from "../src/lib/samples";
 import { buildSummaryPayload, PAYLOAD_LIMITS } from "../src/lib/summaryPayload";
@@ -49,4 +51,20 @@ const large = analyzeEarningsTexts(big(upgrade.previous), big(upgrade.current));
 const ms = Date.now() - started;
 assert.ok(ms < 5000, `large document took ${ms}ms`);
 
-console.log(`ok — upgrade ${JSON.stringify(up.counts)}, downgrade ${JSON.stringify(down.counts)}, large ${large.current.sentences} sentences in ${ms}ms`);
+// Real documents, when they have been downloaded locally (npm run docs:fetch).
+const textDir = join(__dirname, "..", "data", "text");
+let realPairs = 0;
+if (existsSync(textDir)) {
+  const files = readdirSync(textDir).filter((f) => f.endsWith(".txt")).sort();
+  for (const type of ["tanshin", "presentation"]) {
+    const ofType = files.filter((f) => f.endsWith(`-${type}.txt`)).slice(-2);
+    if (ofType.length < 2) continue;
+    const [a, b] = ofType.map((f) => readFileSync(join(textDir, f), "utf8"));
+    const r = analyzeEarningsTexts(a, b, { mode: type === "presentation" ? "slides" : "tanshin" });
+    assert.ok(r.current.sentences > 10, `${ofType[1]}: too few sentences (${r.current.sentences})`);
+    assert.ok(r.changes.length > 0 && r.unchangedCount > 0, `${ofType[1]}: expected both changes and unchanged sentences`);
+    realPairs += 1;
+  }
+}
+
+console.log(`ok — upgrade ${JSON.stringify(up.counts)}, downgrade ${JSON.stringify(down.counts)}, large ${large.current.sentences} sentences in ${ms}ms, real document pairs ${realPairs}`);

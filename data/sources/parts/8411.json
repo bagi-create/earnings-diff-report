@@ -1,0 +1,217 @@
+{
+  "code": "8411",
+  "name": "みずほフィナンシャルグループ",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/index.html",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期第1四半期 決算短信〔日本基準〕",
+      "date": "2026-07-30",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2703_1q.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2027年3月期第1四半期 決算の概要",
+      "date": "2026-07-30",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2703_1q_2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期通期 決算短信〔日本基準〕",
+      "date": "2026-05-15",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_fy.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2026年3月期通期 決算の概要",
+      "date": "2026-05-15",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_fy_2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期第3四半期 決算短信〔日本基準〕",
+      "date": "2026-02-02",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_3q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2026年3月期第3四半期 決算の概要",
+      "date": "2026-02-02",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_3q_2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期第2四半期 決算短信〔日本基準〕",
+      "date": "2025-11-14",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_2q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年3月期第2四半期 決算の概要",
+      "date": "2025-11-14",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_2q_2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期第1四半期 決算短信〔日本基準〕",
+      "date": "2025-07-31",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_1q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年3月期第1四半期 決算の概要",
+      "date": "2025-07-31",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2603_1q_2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期通期 決算短信〔日本基準〕",
+      "date": "2025-05-15",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_fy.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年3月期通期 決算の概要",
+      "date": "2025-05-15",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_fy_2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期第3四半期 決算短信〔日本基準〕",
+      "date": "2025-02-03",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_3q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年3月期第3四半期 決算の概要",
+      "date": "2025-02-03",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_3q_2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期第2四半期 決算短信〔日本基準〕",
+      "date": "2024-11-14",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_2q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年3月期第2四半期 決算の概要",
+      "date": "2024-11-14",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_2q_2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期第1四半期 決算短信〔日本基準〕",
+      "date": "2024-07-31",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_1q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年3月期第1四半期 決算の概要",
+      "date": "2024-07-31",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2503_1q_2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期通期 決算短信〔日本基準〕",
+      "date": "2024-05-15",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_fy.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年3月期通期 決算の概要",
+      "date": "2024-05-15",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_fy_2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期第3四半期 決算短信〔日本基準〕",
+      "date": "2024-02-02",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_3q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年3月期第3四半期 決算の概要",
+      "date": "2024-02-02",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_3q_2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期第2四半期 決算短信〔日本基準〕",
+      "date": "2023-11-13",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_2q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年3月期第2四半期 決算の概要",
+      "date": "2023-11-13",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_2q_2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年3月期第1四半期 決算短信〔日本基準〕",
+      "date": "2023-07-31",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_1q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年3月期第1四半期 決算の概要",
+      "date": "2023-07-31",
+      "url": "https://www.mizuho-fg.co.jp/investors/financial/tanshin/pdf/data2403_1q_2.pdf"
+    }
+  ],
+  "notes": "日本基準（米国基準の短信は別ページで、対象外）。presentationは毎四半期の「決算の概要」スライド。第2四半期・通期にはIR会社説明会の資料も別にある。www.mizuho-fg.co.jp はボット対策で HEAD リクエストに 403 を返すため、ブラウザ相当のヘッダーを付けた GET で 200・application/pdf を確認した（全URLとも本文も取得済み）。IRページに日付の表示はなく、日付はPDF表紙から取得（表紙が絵だけのスライドは短信と同日とした）。2024年3月期は tanshin/archive.html に掲載。2027年3月期第2四半期は未公表。"
+}

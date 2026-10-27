@@ -1,0 +1,217 @@
+{
+  "code": "6098",
+  "name": "リクルートホールディングス",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://recruit-holdings.com/ja/ir/financials/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期 第1四半期 決算短信",
+      "date": "2026-08-07",
+      "url": "https://file.recruit-holdings.com/files/ja/Recruit_202703Q1_earnings_jp.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2027年3月期 第1四半期 プレゼンテーション資料",
+      "date": "2026-08-07",
+      "url": "https://file.recruit-holdings.com/files/ja/Recruit_202703Q1_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期 決算短信",
+      "date": "2026-05-15",
+      "url": "https://file.recruit-holdings.com/files/ja/Recruit_202603Q4_earnings_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2026年3月期 プレゼンテーション資料",
+      "date": "2026-05-15",
+      "url": "https://file.recruit-holdings.com/files/ja/Recruit_202603Q4_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期 第3四半期 決算短信",
+      "date": "2026-02-09",
+      "url": "https://file.recruit-holdings.com/files/ja/Recruit_202603Q3_earnings_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2026年3月期 第3四半期 プレゼンテーション資料",
+      "date": "2026-02-09",
+      "url": "https://file.recruit-holdings.com/files/ja/Recruit_202603Q3_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期 第2四半期 決算短信",
+      "date": "2025-11-06",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202603Q2_earnings_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年3月期 第2四半期 プレゼンテーション資料",
+      "date": "2025-11-06",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202603Q2_presentation_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期 第1四半期 決算短信",
+      "date": "2025-08-05",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202603Q1_earnings_jp.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年3月期 第1四半期 プレゼンテーション資料",
+      "date": "2025-08-05",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202603Q1_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期 決算短信",
+      "date": "2025-05-09",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q4_earnings_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年3月期 プレゼンテーション資料",
+      "date": "2025-05-09",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q4_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期 第3四半期 決算短信",
+      "date": "2025-02-12",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q3_earnings_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年3月期 第3四半期 プレゼンテーション資料",
+      "date": "2025-02-12",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q3_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期 第2四半期 決算短信",
+      "date": "2024-11-11",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q2_earnings_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年3月期 第2四半期 プレゼンテーション資料",
+      "date": "2024-11-11",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q2_presentation_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期 第1四半期 決算短信",
+      "date": "2024-08-08",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q1_earnings_jp.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年3月期 第1四半期 プレゼンテーション資料",
+      "date": "2024-08-08",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202503Q1_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期 決算短信",
+      "date": "2024-05-15",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q4_earnings_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年3月期 プレゼンテーション資料",
+      "date": "2024-05-15",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q4_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期 第3四半期 決算短信",
+      "date": "2024-02-09",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q3_earnings_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年3月期 第3四半期 プレゼンテーション資料",
+      "date": "2024-02-09",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q3_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期 第2四半期 決算短信",
+      "date": "2023-11-08",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q2_earnings_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年3月期 第2四半期 プレゼンテーション資料",
+      "date": "2023-11-08",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q2_presentation_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年3月期 第1四半期 決算短信",
+      "date": "2023-08-10",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q1_earnings_jp.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年3月期 第1四半期 プレゼンテーション資料",
+      "date": "2023-08-10",
+      "url": "https://recruit-holdings.com/files/ir/library/upload/Recruit_202403Q1_presentation_jp.pdf"
+    }
+  ],
+  "notes": "The financials page uses a JavaScript fiscal-year filter. Newest three quarters are on the company's file CDN file.recruit-holdings.com; older ones under recruit-holdings.com/files/ir/library/upload/. 決算短信 = *_earnings_jp.pdf; presentation = *_presentation_jp.pdf (プレゼンテーション資料). Separate 決算サマリー, transcripts and FAQs were not used. Recruit's own fiscal labels: FY2026 = 2027年3月期. Q2 FY2027 not yet published. Dates are taken from the 決算短信 covers."
+}

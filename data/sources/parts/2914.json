@@ -1,0 +1,201 @@
+{
+  "code": "2914",
+  "name": "日本たばこ産業",
+  "fiscalYearEnd": 12,
+  "irUrl": "https://www.jti.co.jp/investors/library/result/index.html",
+  "documents": [
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年12月期 第2四半期 決算短信〔IFRS〕（連結）",
+      "date": "2026-07-30",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20260730_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年度 第2四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2026-07-30",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20260730_02.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年12月期 第1四半期 決算短信〔IFRS〕（連結）",
+      "date": "2026-05-08",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20260508_01.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年度 第1四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2026-05-08",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20260508_02.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年12月期 決算短信〔IFRS〕（連結）",
+      "date": "2026-02-12",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20260212_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年度 決算説明会資料（Allプレゼンテーション）",
+      "date": "2026-02-12",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20260212_02.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年12月期 第3四半期 決算短信〔IFRS〕（連結）",
+      "date": "2025-10-30",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20251030_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年度 第3四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2025-10-30",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20251030_02.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年12月期 第2四半期 決算短信〔IFRS〕（連結）",
+      "date": "2025-07-31",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20250731_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年度 第2四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2025-07-31",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20250731_02.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年12月期 第1四半期 決算短信〔IFRS〕（連結）",
+      "date": "2025-05-07",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20250507_01.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年度 第1四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2025-05-07",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20250507_02.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年12月期 決算短信〔IFRS〕（連結）",
+      "date": "2025-02-13",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20250213_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年度 決算説明会資料（Allプレゼンテーション）",
+      "date": "2025-02-13",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20250821_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年12月期 第3四半期 決算短信〔IFRS〕（連結）",
+      "date": "2024-10-31",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20241031_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年度 第3四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2024-10-31",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20241031_02.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年12月期 第2四半期 決算短信〔IFRS〕（連結）",
+      "date": "2024-08-02",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20240802_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年度 第2四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2024-08-02",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20240802_02.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年12月期 第1四半期 決算短信〔IFRS〕（連結）",
+      "date": "2024-05-09",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20240509_01.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年度 第1四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2024-05-09",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20240509_02.pdf"
+    },
+    {
+      "fy": 2023,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2023年12月期 決算短信〔IFRS〕（連結）",
+      "date": "2024-02-13",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20240213_01.pdf"
+    },
+    {
+      "fy": 2023,
+      "q": 4,
+      "type": "presentation",
+      "title": "2023年度 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2024-02-13",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20240213_04.pdf"
+    },
+    {
+      "fy": 2023,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2023年12月期 第3四半期 決算短信〔IFRS〕（連結）",
+      "date": "2023-10-31",
+      "url": "https://www.jti.co.jp/investors/library/result/pdf/20231031_01.pdf"
+    },
+    {
+      "fy": 2023,
+      "q": 3,
+      "type": "presentation",
+      "title": "2023年度 第3四半期 決算説明会資料（CFOプレゼンテーション）",
+      "date": "2023-10-31",
+      "url": "https://www.jti.co.jp/investors/library/presentation/pdf/20231031_02.pdf"
+    }
+  ],
+  "notes": "December fiscal year end; fy = calendar year (2026年12月期 → 2026). Newest published quarter is 2026年12月期 第2四半期 (2026-07-30); 第3四半期 not yet published as of 2026-10-27. 12 consecutive quarters (2023 Q3 – 2026 Q2). Tanshin from IR library 決算短信 page; presentations from IR library プレゼンテーション page (https://www.jti.co.jp/investors/library/presentation/index.html). Quarterly presentations are the CFO presentation (決算説明会資料（CFOプレゼンテーション）). For full years 2024 and 2025 only the combined 'Allプレゼンテーション' deck is published (CEO business plan + CFO results); for 2024 the linked file is the corrected version re-posted 2025-08-21 (20250821_01.pdf, replaces 20250213_02.pdf). For full year 2023 the separate CFO presentation (20240213_04.pdf) was chosen over the All deck (20240213_02.pdf). 決算レポート (earnings report) PDFs exist but were not used. curl with a browser-like User-Agent gets 403 from jti.co.jp; plain curl UA returns 200 application/pdf."
+}

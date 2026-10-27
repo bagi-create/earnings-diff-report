@@ -1,0 +1,37 @@
+/**
+ * TOPIX Core30 after the periodic review effective 2026-10-30
+ * (JPX announcement of 2026-10-07: +5803 +6752 +6981 +8053,
+ * −3382 −4568 −6367 −7267 −8729).
+ */
+export const CORE30: Array<{ code: string; name: string; fiscalYearEnd: number }> = [
+  { code: "2914", name: "日本たばこ産業", fiscalYearEnd: 12 },
+  { code: "4063", name: "信越化学工業", fiscalYearEnd: 3 },
+  { code: "4502", name: "武田薬品工業", fiscalYearEnd: 3 },
+  { code: "5803", name: "フジクラ", fiscalYearEnd: 3 },
+  { code: "6098", name: "リクルートホールディングス", fiscalYearEnd: 3 },
+  { code: "6501", name: "日立製作所", fiscalYearEnd: 3 },
+  { code: "6503", name: "三菱電機", fiscalYearEnd: 3 },
+  { code: "6752", name: "パナソニック ホールディングス", fiscalYearEnd: 3 },
+  { code: "6758", name: "ソニーグループ", fiscalYearEnd: 3 },
+  { code: "6857", name: "アドバンテスト", fiscalYearEnd: 3 },
+  { code: "6861", name: "キーエンス", fiscalYearEnd: 3 },
+  { code: "6981", name: "村田製作所", fiscalYearEnd: 3 },
+  { code: "7011", name: "三菱重工業", fiscalYearEnd: 3 },
+  { code: "7203", name: "トヨタ自動車", fiscalYearEnd: 3 },
+  { code: "7741", name: "HOYA", fiscalYearEnd: 3 },
+  { code: "7974", name: "任天堂", fiscalYearEnd: 3 },
+  { code: "8001", name: "伊藤忠商事", fiscalYearEnd: 3 },
+  { code: "8031", name: "三井物産", fiscalYearEnd: 3 },
+  { code: "8035", name: "東京エレクトロン", fiscalYearEnd: 3 },
+  { code: "8053", name: "住友商事", fiscalYearEnd: 3 },
+  { code: "8058", name: "三菱商事", fiscalYearEnd: 3 },
+  { code: "8306", name: "三菱UFJフィナンシャル・グループ", fiscalYearEnd: 3 },
+  { code: "8316", name: "三井住友フィナンシャルグループ", fiscalYearEnd: 3 },
+  { code: "8411", name: "みずほフィナンシャルグループ", fiscalYearEnd: 3 },
+  { code: "8766", name: "東京海上ホールディングス", fiscalYearEnd: 3 },
+  { code: "9432", name: "NTT", fiscalYearEnd: 3 },
+  { code: "9433", name: "KDDI", fiscalYearEnd: 3 },
+  { code: "9434", name: "ソフトバンク", fiscalYearEnd: 3 },
+  { code: "9983", name: "ファーストリテイリング", fiscalYearEnd: 8 },
+  { code: "9984", name: "ソフトバンクグループ", fiscalYearEnd: 3 },
+];

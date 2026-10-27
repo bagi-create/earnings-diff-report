@@ -36,3 +36,8 @@ next-env.d.ts
 /.dev.vars*
 !.dev.vars.example
 cloudflare-env.d.ts
+
+# collected documents (company PDFs and derived files stay local)
+/data/raw/
+/data/text/
+/data/out/

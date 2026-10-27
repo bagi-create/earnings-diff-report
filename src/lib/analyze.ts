@@ -4,6 +4,7 @@ import {
   normalizeSentence,
   SECTION_ORDER,
   segmentDocument,
+  type DocumentMode,
   type Sentence,
 } from "@/lib/segment";
 import { categorize, detectSignals, extractMetrics, MATERIAL_TERMS } from "@/lib/signals";
@@ -17,7 +18,7 @@ import type {
 } from "@/lib/types";
 
 /** Bump when the analysis output changes so cached reports are recomputed. */
-export const ANALYSIS_VERSION = 2;
+export const ANALYSIS_VERSION = 4;
 
 const SECTION_WEIGHT: Record<string, number> = {
   見通し: 1.5,
@@ -160,21 +161,30 @@ function importanceOf(pair: Pair, toneDelta: number, categories: string[], secti
   };
   const before = pair.before?.text ?? "";
   const after = pair.after?.text ?? "";
-  const material = MATERIAL_TERMS.test(after) !== MATERIAL_TERMS.test(before) ||
-    (pair.kind !== "rephrased" && MATERIAL_TERMS.test(after + before));
+  // Footnotes such as "(注)1.直近に公表されている業績予想からの修正の有無:無" are boilerplate.
+  const footnote = /^(\(注|※|\*|注\d)/.test(after || before);
+  const material =
+    !footnote &&
+    (MATERIAL_TERMS.test(after) !== MATERIAL_TERMS.test(before) ||
+      (pair.kind !== "rephrased" && MATERIAL_TERMS.test(after + before)));
   let score = base[pair.kind];
   score += Math.min(Math.abs(toneDelta), 6) * 0.6;
   score += SECTION_WEIGHT[section] ?? 0;
   score += material ? 3 : 0;
   score += categories.length * 0.3;
   if ((after || before).length < 20) score -= 0.5;
+  if (footnote) score -= 2.5;
   if (pair.kind === "numeric" && !material) score = Math.min(score, 2);
   return Math.round(score * 10) / 10;
 }
 
-export function analyzeEarningsTexts(previousText: string, currentText: string): AnalysisResult {
-  const prevDoc = segmentDocument(previousText);
-  const currDoc = segmentDocument(currentText);
+export function analyzeEarningsTexts(
+  previousText: string,
+  currentText: string,
+  options: { mode?: DocumentMode } = {},
+): AnalysisResult {
+  const prevDoc = segmentDocument(previousText, options.mode);
+  const currDoc = segmentDocument(currentText, options.mode);
   const { pairs, unchanged } = alignSentences(prevDoc.sentences, currDoc.sentences);
 
   const ratio = currDoc.sentences.length / Math.max(1, prevDoc.sentences.length);

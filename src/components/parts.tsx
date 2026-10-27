@@ -57,6 +57,11 @@ export function ToneRuler({ previous, current }: { previous: ToneSummary; curren
   );
 }
 
+/** Signal states that only say a topic is mentioned; a change to them is not news. */
+const UNINFORMATIVE = new Set(["言及あり", "記載なし"]);
+export const isMeaningfulSignal = (s: { changed?: boolean; after: string }) =>
+  s.changed !== false && !UNINFORMATIVE.has(s.after);
+
 export function signed(n: number): string {
   return n > 0 ? `+${n}` : `${n}`;
 }

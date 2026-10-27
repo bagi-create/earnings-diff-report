@@ -95,10 +95,16 @@ function isPageFurniture(line: string): boolean {
 function isTableRow(line: string): boolean {
   if (/[。]/.test(line)) return false;
   const digits = (line.match(/[0-9△▲,.%-]/g) ?? []).length;
-  return line.length >= 6 && digits / line.length > 0.35;
+  // Header rows of financial tables: labels and units, e.g. "売上高営業利益百万円 % 百万円 %".
+  const units = (line.match(/百万円|千円|億円|円銭|%/g) ?? []).length;
+  return (line.length >= 6 && digits / line.length > 0.35) || units >= 3;
 }
 
-export function segmentDocument(rawText: string): SegmentedDocument {
+/** "tanshin": prose documents such as 決算短信. "slides": presentation decks. */
+export type DocumentMode = "tanshin" | "slides";
+
+export function segmentDocument(rawText: string, mode: DocumentMode = "tanshin"): SegmentedDocument {
+  if (mode === "slides") return segmentSlides(rawText);
   const text = normalizeText(rawText);
   const rawLines = text
     .split("\n")
@@ -190,4 +196,71 @@ export function normalizeSentence(sentence: string): string {
 /** Comparison key with every number replaced, to spot "only the figures changed". */
 export function maskNumbers(normalized: string): string {
   return normalized.replace(/[△▲-]?[0-9][0-9,.]*/g, "#");
+}
+
+const SLIDE_BULLET = /^[・‧•●○■□◆◇▶▷►✓✔\-－]\s*/;
+
+/**
+ * Presentation decks rarely end sentences with 「。」, so units are lines or
+ * bullets instead of sentences. The first short line of a page is taken as
+ * its title, which decides the section; lines repeated on many pages
+ * (company name, copyright, page labels) are dropped.
+ */
+function segmentSlides(rawText: string): SegmentedDocument {
+  const text = normalizeText(rawText);
+  const pages = text.split(/\f/).map((page) =>
+    page
+      .split("\n")
+      .map((l) => l.trim())
+      .filter(Boolean),
+  );
+
+  const lineCounts = new Map<string, number>();
+  for (const page of pages) for (const line of new Set(page)) lineCounts.set(line, (lineCounts.get(line) ?? 0) + 1);
+  const repeatedLimit = Math.max(3, pages.length * 0.3);
+
+  let skippedLines = 0;
+  const sentences: Sentence[] = [];
+  for (const page of pages) {
+    const kept = page.filter((line) => {
+      const drop =
+        (lineCounts.get(line) ?? 0) >= repeatedLimit ||
+        isPageFurniture(line) ||
+        isTableRow(line) ||
+        /copyright|all rights reserved|©/i.test(line);
+      if (drop) skippedLines += 1;
+      return !drop;
+    });
+    if (kept.length === 0) continue;
+
+    const titleIndex = kept.findIndex((l) => l.length <= 40);
+    const heading = titleIndex >= 0 ? kept[titleIndex] : "";
+    const section = canonicalSection(heading) ?? "その他";
+
+    // A long line that does not end a statement usually continues on the next line.
+    const units: string[] = [];
+    let buffer = "";
+    kept.forEach((line, i) => {
+      if (i === titleIndex) return;
+      const bullet = SLIDE_BULLET.test(line);
+      const body = line.replace(SLIDE_BULLET, "");
+      if (buffer && (bullet || buffer.length < 22 || /[。:：)）]$/.test(buffer))) {
+        units.push(buffer);
+        buffer = "";
+      }
+      buffer += body;
+    });
+    if (buffer) units.push(buffer);
+
+    for (const unit of units) {
+      for (const piece of unit.includes("。") ? splitSentences(unit) : [unit]) {
+        if (piece.replace(/[\s、。]/g, "").length < 8) {
+          skippedLines += 1;
+          continue;
+        }
+        sentences.push({ index: sentences.length, text: piece, section, heading });
+      }
+    }
+  }
+  return { sentences, characters: text.length, skippedLines };
 }

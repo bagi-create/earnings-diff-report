@@ -1,0 +1,217 @@
+{
+  "code": "8058",
+  "name": "三菱商事",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "連結決算短信（2026年度第1四半期）",
+      "date": "2026-08-03",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202608j.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "決算説明会資料（2026年度第1四半期）",
+      "date": "2026-08-03",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/260803/20260803j.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "連結決算短信（2025年度）",
+      "date": "2026-05-01",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202605j.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "決算説明会資料（2025年度）",
+      "date": "2026-05-01",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/260501/20260501j.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "連結決算短信（2025年度第3四半期）",
+      "date": "2026-02-05",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202602j.pdf?260210"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "決算説明会資料（2025年度第3四半期）",
+      "date": "2026-02-05",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/260205/20260205j.pdf?260213"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "連結決算短信（2025年度第2四半期）",
+      "date": "2025-11-04",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202511j.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "決算説明会資料（2025年度第2四半期）",
+      "date": "2025-11-04",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/251104/20251104j.pdf?2026020301"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "連結決算短信（2025年度第1四半期）",
+      "date": "2025-08-04",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202508j.pdf?250807"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "決算説明会資料（2025年度第1四半期）",
+      "date": "2025-08-04",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/250804/20250804j.pdf?250813"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "連結決算短信（2024年度）",
+      "date": "2025-05-02",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202505j.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "決算説明会資料（2024年度）",
+      "date": "2025-05-02",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/250502/20250502j.pdf?250520"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "連結決算短信（2024年度第3四半期）",
+      "date": "2025-02-06",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202502j.pdf?250212"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "決算説明会資料（2024年度第3四半期）",
+      "date": "2025-02-06",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/250206/20250206j.pdf?250218"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "連結決算短信（2024年度第2四半期）",
+      "date": "2024-11-01",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202411j.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "決算説明会資料（2024年度第2四半期）",
+      "date": "2024-11-01",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/241101/20241101j.pdf?241128"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "連結決算短信（2024年度第1四半期）",
+      "date": "2024-08-01",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202408j.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "決算説明会資料（2024年度第1四半期）",
+      "date": "2024-08-01",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/240801/20240801j.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "連結決算短信（2023年度）",
+      "date": "2024-05-02",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202405j.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "決算説明会資料（2023年度）",
+      "date": "2024-05-02",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/240502/20240502j.pdf?241219"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "連結決算短信（2023年度第3四半期）",
+      "date": "2024-02-06",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202402j.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "決算説明会資料（2023年度第3四半期）",
+      "date": "2024-02-06",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/240206/20240206j.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "連結決算短信（2023年度第2四半期）",
+      "date": "2023-11-02",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202311j.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "決算説明会資料（2023年度第2四半期）",
+      "date": "2023-11-02",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/231102/20231102j.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "連結決算短信（2023年度第1四半期）",
+      "date": "2023-08-03",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/earnings/pdf/202308j.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "決算説明会資料（2023年度第1四半期）",
+      "date": "2023-08-03",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/meetings/pdf/230803/20230803j.pdf"
+    }
+  ],
+  "notes": "IFRS. 三菱商事のIRページは「2026年度」＝2027年3月期の表記（fyはそれを3月期に換算済み）。日付はIRページの決算公表日（説明会資料のフォルダ名と同じ）。2025年度以降の第1・第3四半期の短信リンクは、監査法人の期中レビュー完了後に差し替えられた版（表紙の日付は公表日の数日後）。2023年度（2024年3月期）の短信PDFは「公表資料」の表紙が付いた束で、2ページ目から決算短信本体。presentationは決算説明会資料（質疑応答は除外）。2027年3月期第2四半期は未公表（例年11月上旬）。"
+}

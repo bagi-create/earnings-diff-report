@@ -23,16 +23,23 @@
 
 ## Phase 2: TOPIX 事前生成と参照（DB化）
 
-都度AIを走らせず、決算が出た銘柄のレポートを事前に作って保存し、画面は読むだけにする。
+都度AIを走らせず、決算資料を集めてレポートを事前に作り、画面は読むだけにする。
 
-- [ ] 保存先：Cloudflare D1（銘柄・決算期・レポートJSON）＋ R2（元PDF・抽出テキスト）
-  - `reports(code, period, doc_type, analysis_version, prompt_version, model, result_json, created_at)`
-  - 解析結果（`AnalysisResult`）とAI要約はすでにJSONで完結しているので、そのまま保存できる
-  - `ANALYSIS_VERSION`／`PROMPT_VERSION` を持たせ、エンジン更新時に再生成する対象を判別する
-- [ ] 取得：TDnet の適時開示から TOPIX 構成銘柄の決算短信PDFを取得（Cron Trigger）
-- [ ] 生成：ルールベース解析はサーバー側（Node のバッチ）で実行し、AI要約は Gemini Batch API でまとめて生成（半額）
-- [ ] 画面：銘柄コード検索 → 最新レポートを表示、過去の決算期どうしも選べる
-- [ ] 決算シーズンの「トーンが大きく動いた銘柄」一覧（DBから集計するだけでAI不要）
+### 2-1. TOPIX Core30 試作（2026-10）
+- [x] 全上場銘柄の検索（JPX 上場銘柄一覧から `src/data/companies.json`）
+- [x] Core30 の各社IRサイトから決算短信・決算説明資料のURLを収集（`data/sources/core30.json`、12〜13四半期）
+- [x] 取得・抽出（`npm run docs:fetch`）：期の取り違え検出、文字化けPDFの除外
+- [x] 説明資料（スライド）用の解析モード
+- [x] 一括生成（`npm run reports:build`）：前四半期比・前年同期比 × 直近8期、Gemini 要約（途中再開可）
+- [x] KV「REPORTS」へ登録（`npm run reports:upload -- --remote`）
+- [x] 銘柄ページ（期の表記は全社共通の FY◯◯◯◯ 1Q〜4Q、8期のトーン推移、資料と比較の切り替え）、パスワード保護
+- [ ] 文字化けPDFのOCR対応（東京エレクトロンの決算短信 3期分が該当）
+- [ ] 決算短信サマリーのXBRLから数値（売上・利益・予想・進捗率）を正確に取得
+
+### 2-2. 拡大
+- [ ] 新しい決算の自動取得（TDnet／各社IRの更新検知）と差分の追加生成
+- [ ] 対象を TOPIX 全体へ。件数が増えたら D1 で横断の集計（トーンが大きく動いた銘柄など）
+- [ ] 想定為替レートなど前提条件の変化、進捗率
 
 ## Phase 3: アカウントと配信
 

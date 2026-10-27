@@ -1,0 +1,217 @@
+{
+  "code": "7974",
+  "name": "任天堂",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://www.nintendo.co.jp/ir/library/earnings/index.html",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期 第1四半期 決算短信",
+      "date": "2026-08-06",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260806.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2027年3月期 第1四半期 決算説明資料（ノート付）",
+      "date": "2026-08-06",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期 決算短信",
+      "date": "2026-05-08",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260508.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2026年3月期 決算説明資料",
+      "date": "2026-05-08",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260508_4.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期 第3四半期 決算短信",
+      "date": "2026-02-03",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260203.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2026年3月期 第3四半期 決算説明資料",
+      "date": "2026-02-03",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260203_2.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期 第2四半期 決算短信",
+      "date": "2025-11-04",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/251104.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年3月期 第2四半期 決算説明資料（ノート付）",
+      "date": "2025-11-04",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/251104_4.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期 第1四半期 決算短信",
+      "date": "2025-08-01",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/250801.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年3月期 第1四半期 決算説明資料（ノート付）",
+      "date": "2025-08-01",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/250801_2.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期 決算短信",
+      "date": "2025-05-08",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/250508.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年3月期 決算説明資料",
+      "date": "2025-05-08",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/250508_4.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期 第3四半期 決算短信",
+      "date": "2025-02-04",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/250204.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年3月期 第3四半期 決算説明資料",
+      "date": "2025-02-04",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2025/250204_3.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期 第2四半期 決算短信",
+      "date": "2024-11-05",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/241105.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年3月期 第2四半期 決算説明資料（ノート付）",
+      "date": "2024-11-05",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/241105_5.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期 第1四半期 決算短信",
+      "date": "2024-08-02",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/240802.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年3月期 第1四半期 決算説明資料（ノート付）",
+      "date": "2024-08-02",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/240802_2.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期 決算短信",
+      "date": "2024-05-07",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/240507.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年3月期 決算説明資料",
+      "date": "2024-05-07",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/240507_3.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期 第3四半期 決算短信",
+      "date": "2024-02-06",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/240206.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年3月期 第3四半期 決算説明資料",
+      "date": "2024-02-06",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2024/240206_3.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期 第2四半期 決算短信",
+      "date": "2023-11-07",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2023/231107.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年3月期 第2四半期 決算説明資料（ノート付）",
+      "date": "2023-11-07",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2023/231107_4.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年3月期 第1四半期 決算短信",
+      "date": "2023-08-03",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2023/230803.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年3月期 第1四半期 決算説明資料（ノート付）",
+      "date": "2023-08-03",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2023/230803_2.pdf"
+    }
+  ],
+  "notes": "13 quarters (FY2024 Q1 - FY2027 Q1). FY2027 Q2 not yet published as of 2026-10-27 (scheduled early Nov). J-GAAP. IR page is JS-rendered; links taken from the site's data file https://www.nintendo.co.jp/corporate/common/data/news_jp.xml. Presentation choice: Q3/Q4 use 決算説明資料 (slides without notes); Q1/Q2 only have 決算説明資料（ノート付）, so that is recorded. Q2 also has a separate 決算説明会/経営方針説明会 プレゼンテーション資料 (president's briefing, mixes management policy) which was not recorded. The site's XML mislabels the FY2025 Q1 tanshin (240802.pdf) as 2024年3月期 in one entry; title corrected here."
+}

@@ -1,0 +1,217 @@
+{
+  "code": "9983",
+  "name": "ファーストリテイリング",
+  "fiscalYearEnd": 8,
+  "irUrl": "https://www.fastretailing.com/jp/ir/library/earning_back.html",
+  "documents": [
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年8月期 通期 決算短信",
+      "date": "2026-10-08",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202608_4q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2026年８月期業績および2027年８月期 業績予想",
+      "date": "2026-10-08",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20261008_results.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年8月期 第3四半期 決算短信",
+      "date": "2026-07-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202608_3q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2026年８月期 第３四半期業績および通期業績予想",
+      "date": "2026-07-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20260709_results.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年8月期 第2四半期 決算短信",
+      "date": "2026-04-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202608_2q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年８月期 上期業績および通期業績予想",
+      "date": "2026-04-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20260409_results.pdf?v=1"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年8月期 第1四半期 決算短信",
+      "date": "2026-01-08",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202608_1q.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年８月期 第１四半期業績および通期業績予想",
+      "date": "2026-01-08",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20260108_results.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年8月期 通期 決算短信",
+      "date": "2025-10-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202508_4q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年８月期業績および2026年８月期 業績予想",
+      "date": "2025-10-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20251009_results.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年8月期 第3四半期 決算短信",
+      "date": "2025-07-10",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202508_3q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年８月期 第３四半期業績および通期業績予想",
+      "date": "2025-07-10",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20250710_results.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年8月期 第2四半期 決算短信",
+      "date": "2025-04-10",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202508_2q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年８月期 上期業績および通期業績予想",
+      "date": "2025-04-10",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20250410_results.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年8月期 第1四半期 決算短信",
+      "date": "2025-01-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202508_1q.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年８月期 第１四半期業績および通期業績予想",
+      "date": "2025-01-09",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20250109_results.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年8月期 通期 決算短信",
+      "date": "2024-10-10",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202408_4q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年8月期業績および2025年8月期業績予想",
+      "date": "2024-10-10",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20241010_results.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年8月期 第3四半期 決算短信",
+      "date": "2024-07-11",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202408_3q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年８月期 第３四半期業績および通期見通し",
+      "date": "2024-07-11",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20240711_results.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年8月期 第2四半期 決算短信",
+      "date": "2024-04-11",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202408_2q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年８月期 上期業績および通期見通し",
+      "date": "2024-04-11",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20240411_results.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年8月期 第1四半期 決算短信",
+      "date": "2024-01-11",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202408_1q.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年８月期 第１四半期業績および通期見通し",
+      "date": "2024-01-11",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20240111_results.pdf"
+    },
+    {
+      "fy": 2023,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2023年8月期 通期 決算短信",
+      "date": "2023-10-12",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/tanshin202308_4q.pdf"
+    },
+    {
+      "fy": 2023,
+      "q": 4,
+      "type": "presentation",
+      "title": "2023年８月期 業績 2024年８月期 業績予想",
+      "date": "2023-10-12",
+      "url": "https://www.fastretailing.com/jp/ir/library/pdf/20231012_results.pdf"
+    }
+  ],
+  "notes": "IFRS. 8月決算。2026年8月期通期（2026年10月8日公表）が今月公表のため、13四半期分（2023年8月期通期〜2026年8月期通期）を記録した。presentationは各四半期のCFO説明資料（*_results.pdf、テキスト付き）。通期・上期に出る会長や役員の追加プレゼン、決算サマリー、FACT BOOK、質疑応答は除外。日付はIRページの開催日で、表紙と一致を確認済み。"
+}

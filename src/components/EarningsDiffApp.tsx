@@ -117,10 +117,7 @@ export default function EarningsDiffApp() {
 
   return (
     <main className="page">
-      <header className="masthead">
-        <p className="masthead__mark">決算差分</p>
-        <p className="masthead__sub">前回と今回の決算資料を読み比べ、書き換わった箇所だけを拾い出します。</p>
-      </header>
+      <p className="page__lead">前回と今回の決算資料をアップロードして、書き換わった箇所だけを拾い出します。</p>
 
       {editing || !result ? (
         <section className="intake" aria-label="比較する資料">

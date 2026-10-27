@@ -1,0 +1,217 @@
+{
+  "code": "9984",
+  "name": "ソフトバンクグループ",
+  "fiscalYearEnd": 3,
+  "irUrl": "https://group.softbank/ir/presentations",
+  "documents": [
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2027年3月期 第1四半期 決算短信",
+      "date": "2026-08-06",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q1fy2026_01_ja.pdf"
+    },
+    {
+      "fy": 2027,
+      "q": 1,
+      "type": "presentation",
+      "title": "2027年3月期 第1四半期 決算説明会 プレゼンテーション資料",
+      "date": "2026-08-06",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2026/earnings-presentation_q1fy2026_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2026年3月期 決算短信",
+      "date": "2026-05-13",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q4fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 4,
+      "type": "presentation",
+      "title": "2026年3月期 決算説明会 プレゼンテーション資料",
+      "date": "2026-05-13",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2025/earnings-presentation_q4fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2026年3月期 第3四半期 決算短信",
+      "date": "2026-02-12",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q3fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 3,
+      "type": "presentation",
+      "title": "2026年3月期 第3四半期 決算説明会 プレゼンテーション資料",
+      "date": "2026-02-12",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2025/earnings-presentation_q3fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2026年3月期 第2四半期 決算短信",
+      "date": "2025-11-11",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q2fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 2,
+      "type": "presentation",
+      "title": "2026年3月期 第2四半期 決算説明会 プレゼンテーション資料",
+      "date": "2025-11-11",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2025/earnings-presentation_q2fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2026年3月期 第1四半期 決算短信",
+      "date": "2025-08-07",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q1fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2026,
+      "q": 1,
+      "type": "presentation",
+      "title": "2026年3月期 第1四半期 決算説明会 プレゼンテーション資料",
+      "date": "2025-08-07",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2025/earnings-presentation_q1fy2025_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2025年3月期 決算短信",
+      "date": "2025-05-13",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q4fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 4,
+      "type": "presentation",
+      "title": "2025年3月期 決算説明会 プレゼンテーション資料",
+      "date": "2025-05-13",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2024/earnings-presentation_q4fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2025年3月期 第3四半期 決算短信",
+      "date": "2025-02-12",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q3fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 3,
+      "type": "presentation",
+      "title": "2025年3月期 第3四半期 決算説明会 プレゼンテーション資料",
+      "date": "2025-02-12",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2024/earnings-presentation_q3fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2025年3月期 第2四半期 決算短信",
+      "date": "2024-11-12",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q2fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 2,
+      "type": "presentation",
+      "title": "2025年3月期 第2四半期 決算説明会 プレゼンテーション資料",
+      "date": "2024-11-12",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2024/earnings-presentation_q2fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2025年3月期 第1四半期 決算短信",
+      "date": "2024-08-07",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q1fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2025,
+      "q": 1,
+      "type": "presentation",
+      "title": "2025年3月期 第1四半期 決算説明会 プレゼンテーション資料",
+      "date": "2024-08-07",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2024/earnings-presentation_q1fy2024_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "tanshin",
+      "title": "2024年3月期 決算短信",
+      "date": "2024-05-13",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q4fy2023_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 4,
+      "type": "presentation",
+      "title": "2024年3月期 決算説明会 プレゼンテーション資料",
+      "date": "2024-05-13",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2023/earnings-presentation_q4fy2023_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "tanshin",
+      "title": "2024年3月期 第3四半期 決算短信",
+      "date": "2024-02-08",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q3fy2023_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 3,
+      "type": "presentation",
+      "title": "2024年3月期 第3四半期 決算説明会 プレゼンテーション資料",
+      "date": "2024-02-08",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2023/earnings-presentation_q3fy2023_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "tanshin",
+      "title": "2024年3月期 第2四半期 決算短信",
+      "date": "2023-11-09",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q2fy2023_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 2,
+      "type": "presentation",
+      "title": "2024年3月期 第2四半期 決算説明会 プレゼンテーション資料",
+      "date": "2023-11-09",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2023/earnings-presentation_q2fy2023_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "tanshin",
+      "title": "2024年3月期 第1四半期 決算短信",
+      "date": "2023-08-08",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/financials/financial_reports/financial-report_q1fy2023_01_ja.pdf"
+    },
+    {
+      "fy": 2024,
+      "q": 1,
+      "type": "presentation",
+      "title": "2024年3月期 第1四半期 決算説明会 プレゼンテーション資料",
+      "date": "2023-08-08",
+      "url": "https://group.softbank/media/Project/sbg/sbg/pdf/ir/presentations/2023/earnings-presentation_q1fy2023_01_ja.pdf"
+    }
+  ],
+  "notes": "IFRS. URLの「q1fy2026」＝2027年3月期第1四半期（ソフトバンクグループの年度表記）。presentationは決算説明会の「プレゼンテーション資料」（earnings-presentation_*_01_ja.pdf）。書き起こし（_02/_03）と投資家向け説明会資料は除外。説明会資料ページの過年度分はJavaScriptで描画され、curlでは一覧が取れなかった。過年度のpresentationのURLは最新回と同じ命名規則から組み立て、全件で200・application/pdfを確認し、表紙の題名（「20XX年3月期 第N四半期 決算説明会」）が期とも一致することを確かめた。日付はPDF表紙から取得。2027年3月期第2四半期は未公表。"
+}

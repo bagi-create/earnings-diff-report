@@ -26,7 +26,10 @@
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
-    "check:analysis": "tsx --tsconfig tsconfig.json scripts/check-analysis.ts"
+    "check:analysis": "tsx --tsconfig tsconfig.json scripts/check-analysis.ts",
+    "docs:fetch": "tsx --tsconfig tsconfig.json scripts/fetch-documents.ts",
+    "reports:build": "tsx --tsconfig tsconfig.json scripts/build-reports.ts",
+    "reports:upload": "tsx --tsconfig tsconfig.json scripts/upload-reports.ts"
   },
   "version": "0.1.0",
   "engines": {
