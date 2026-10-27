@@ -64,3 +64,5 @@ GEMINI_MODEL=gemini-2.5-flash
 
 - PDF のレイアウトによってはテキスト抽出の精度が落ちます。その場合はテキスト貼り付けを使ってください。
 - 本ツールは決算資料の文言変化を整理するもので、特定銘柄の売買を推奨する投資助言ではありません。
+
+公開版: https://earnings-diff-report.m-shibahagi.workers.dev/
