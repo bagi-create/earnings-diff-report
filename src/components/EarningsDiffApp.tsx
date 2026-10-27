@@ -1,357 +1,289 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import {
-  analyzeEarningsTexts,
-  toPlainTextReport,
-  type AnalysisResult,
-} from "@/lib/diff";
-import {
-  SAMPLE_CURRENT,
-  SAMPLE_CURRENT_CAUTIOUS,
-  SAMPLE_PREVIOUS,
-  SAMPLE_PREVIOUS_BULLISH,
-} from "@/lib/samples";
+import { useRef, useState } from "react";
+import ResultView, { type AiState } from "@/components/ResultView";
+import { analyzeEarningsTexts } from "@/lib/analyze";
+import { extractPdfText } from "@/lib/pdf";
+import { SAMPLES } from "@/lib/samples";
+import { buildSummaryPayload } from "@/lib/summaryPayload";
+import type { AnalysisResult, SummarizeResponse } from "@/lib/types";
 
-type DiffFilter = "all" | "added" | "removed" | "rephrased";
+type Side = "previous" | "current";
 
-type AnalysisMeta = {
-  engine: "gemini-flash" | "rule-based";
-  model: string | null;
-  aiStatus: "generated" | "not_configured" | "fallback";
-  warning?: string;
-};
-
-async function extractPdfText(file: File): Promise<string> {
-  const pdfjs = await import("pdfjs-dist");
-  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-    "pdfjs-dist/build/pdf.worker.min.mjs",
-    import.meta.url,
-  ).toString();
-
-  const buffer = await file.arrayBuffer();
-  const pdf = await pdfjs.getDocument({ data: buffer }).promise;
-  const pages: string[] = [];
-
-  for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
-    const page = await pdf.getPage(pageNumber);
-    const content = await page.getTextContent();
-    const text = content.items
-      .map((item) => ("str" in item ? item.str : ""))
-      .join(" ");
-    pages.push(text);
-  }
-
-  return pages.join("\n");
+interface DocState {
+  text: string;
+  fileName?: string;
+  pages?: number;
+  loading?: boolean;
+  error?: string;
 }
+
+const MAX_CHARS = 300_000;
 
 export default function EarningsDiffApp() {
   const [companyName, setCompanyName] = useState("");
-  const [previousText, setPreviousText] = useState("");
-  const [currentText, setCurrentText] = useState("");
-  const [filter, setFilter] = useState<DiffFilter>("all");
-  const [status, setStatus] = useState("");
+  const [docs, setDocs] = useState<Record<Side, DocState>>({
+    previous: { text: "" },
+    current: { text: "" },
+  });
   const [result, setResult] = useState<AnalysisResult | null>(null);
-  const [analysisMeta, setAnalysisMeta] = useState<AnalysisMeta | null>(null);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [ai, setAi] = useState<AiState | null>(null);
+  const [analyzing, setAnalyzing] = useState(false);
+  const [editing, setEditing] = useState(true);
+  const runId = useRef(0);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
-  const canAnalyze = previousText.trim().length > 0 && currentText.trim().length > 0;
+  const ready = docs.previous.text.trim().length > 0 && docs.current.text.trim().length > 0;
+  const busy = docs.previous.loading || docs.current.loading;
 
-  const reportText = useMemo(
-    () => (result ? toPlainTextReport(result, companyName) : ""),
-    [result, companyName],
-  );
+  function patchDoc(side: Side, patch: DocState | ((d: DocState) => DocState)) {
+    setDocs((prev) => ({ ...prev, [side]: typeof patch === "function" ? patch(prev[side]) : patch }));
+  }
 
-  async function handleFile(file: File | null, target: "previous" | "current") {
-    if (!file) return;
-    setStatus(`${file.name} を読み込み中です…`);
+  async function loadFile(side: Side, file: File) {
+    patchDoc(side, (d) => ({ ...d, loading: true, error: undefined, fileName: file.name }));
     try {
-      const text = file.type === "application/pdf" ? await extractPdfText(file) : await file.text();
-      if (target === "previous") setPreviousText(text);
-      else setCurrentText(text);
-      setStatus(`${file.name} からテキストを抽出しました。`);
+      const isPdf = file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf");
+      const { text, pages } = isPdf ? await extractPdfText(file) : { text: await file.text(), pages: undefined };
+      if (!text.replace(/\s/g, "")) {
+        patchDoc(side, {
+          text: "",
+          fileName: file.name,
+          error: "文字を読み取れませんでした。画像だけのPDF（スキャン）の可能性があります。本文を貼り付けてください。",
+        });
+        return;
+      }
+      patchDoc(side, { text: text.slice(0, MAX_CHARS), fileName: file.name, pages });
     } catch {
-      setStatus("PDFの抽出に失敗しました。テキストを直接貼り付けて試してください。");
+      patchDoc(side, {
+        text: "",
+        fileName: file.name,
+        error: "PDFを読み込めませんでした。パスワード付きか破損している可能性があります。本文を貼り付けてください。",
+      });
     }
   }
 
-  function loadSample(kind: "bullish" | "cautious") {
-    if (kind === "bullish") {
-      setPreviousText(SAMPLE_PREVIOUS);
-      setCurrentText(SAMPLE_CURRENT);
-    } else {
-      setPreviousText(SAMPLE_PREVIOUS_BULLISH);
-      setCurrentText(SAMPLE_CURRENT_CAUTIOUS);
-    }
-    setResult(null);
-    setAnalysisMeta(null);
-    setStatus("サンプルを読み込みました。「差分を解析」を押してください。");
+  function loadSample(id: string) {
+    const sample = SAMPLES.find((s) => s.id === id)!;
+    setCompanyName(sample.companyName);
+    setDocs({
+      previous: { text: sample.previous, fileName: "サンプル（前回）" },
+      current: { text: sample.current, fileName: "サンプル（今回）" },
+    });
+    void analyze(sample.previous, sample.current, sample.companyName);
   }
 
-  async function analyze() {
-    if (!canAnalyze || isAnalyzing) return;
+  function swap() {
+    setDocs((d) => ({ previous: d.current, current: d.previous }));
+  }
 
-    setIsAnalyzing(true);
-    setStatus("差分を解析し、Gemini FlashでAI要約を作成しています…");
+  async function analyze(previous = docs.previous.text, current = docs.current.text, company = companyName) {
+    if (!previous.trim() || !current.trim()) return;
+    const id = ++runId.current;
+    setAnalyzing(true);
+    // Let the button state paint before the synchronous analysis runs.
+    await new Promise((r) => setTimeout(r, 30));
+    const analysis = analyzeEarningsTexts(previous, current);
+    if (id !== runId.current) return;
+    setResult(analysis);
+    setEditing(false);
+    setAnalyzing(false);
+    requestAnimationFrame(() => resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
 
+    if (analysis.changes.length === 0) {
+      setAi(null);
+      return;
+    }
+    setAi({ status: "loading" });
     try {
       const response = await fetch("/api/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ companyName, previousText, currentText }),
+        body: JSON.stringify({ payload: buildSummaryPayload(analysis, company) }),
       });
-
-      if (!response.ok) {
-        throw new Error(`Analysis API failed (${response.status})`);
-      }
-
-      const data = (await response.json()) as AnalysisMeta & { result: AnalysisResult };
-      setResult(data.result);
-      setAnalysisMeta(data);
-      setStatus(
-        data.aiStatus === "generated"
-          ? "解析とAI要約が完了しました。"
-          : data.warning ?? "解析が完了しました。現在はルールベース解析で表示しています。",
-      );
+      const data = (await response.json()) as SummarizeResponse;
+      if (id === runId.current) setAi({ status: "done", ...data });
     } catch {
-      // Keep the tool usable even if the API route or network is unavailable.
-      setResult(analyzeEarningsTexts(previousText, currentText));
-      setAnalysisMeta({ engine: "rule-based", model: null, aiStatus: "fallback" });
-      setStatus("APIに接続できなかったため、ブラウザ内のルールベース解析で表示しています。");
-    } finally {
-      setIsAnalyzing(false);
+      if (id === runId.current) {
+        setAi({
+          status: "done",
+          aiStatus: "fallback",
+          model: null,
+          warning: "AI要約のサーバーに接続できませんでした。自動解析の結果のみ表示しています。",
+        });
+      }
     }
-  }
-
-  function downloadReport() {
-    if (!reportText) return;
-    const blob = new Blob([reportText], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "earnings-diff-report.txt";
-    anchor.click();
-    URL.revokeObjectURL(url);
   }
 
   return (
     <main className="page">
-      <header className="hero">
-        <p className="eyebrow">Earnings Diff Report</p>
-        <h1>決算差分レポート</h1>
-        <p className="lead">
-          前回と今回の決算資料を比べ、追加・削除・言い換えられた文言、トーンの変化、
-          事業環境の変化を短時間で確認するためのツールです。
-        </p>
+      <header className="masthead">
+        <p className="masthead__mark">決算差分</p>
+        <p className="masthead__sub">前回と今回の決算資料を読み比べ、書き換わった箇所だけを拾い出します。</p>
       </header>
 
-      <section className="card">
-        <label className="field">
-          <span>会社名（任意）</span>
-          <input
-            value={companyName}
-            onChange={(event) => setCompanyName(event.target.value)}
-            placeholder="例：〇〇ホールディングス"
-          />
-        </label>
+      {editing || !result ? (
+        <section className="intake" aria-label="比較する資料">
+          <label className="company">
+            <span>会社名</span>
+            <input
+              className="input"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+              placeholder="任意（レポートの見出しに入ります）"
+            />
+          </label>
 
-        <div className="grid">
-          <DocumentInput
-            title="前回の決算資料"
-            text={previousText}
-            onTextChange={setPreviousText}
-            onFile={(file) => void handleFile(file, "previous")}
-          />
-          <DocumentInput
-            title="今回の決算資料"
-            text={currentText}
-            onTextChange={setCurrentText}
-            onFile={(file) => void handleFile(file, "current")}
-          />
-        </div>
-
-        <div className="actions">
-          <button
-            type="button"
-            className="primary"
-            onClick={() => void analyze()}
-            disabled={!canAnalyze || isAnalyzing}
-          >
-            {isAnalyzing ? "解析中…" : "差分を解析"}
-          </button>
-          <button type="button" onClick={() => loadSample("bullish")}>
-            サンプル：中立→強気
-          </button>
-          <button type="button" onClick={() => loadSample("cautious")}>
-            サンプル：強気→慎重
-          </button>
-          {result ? (
-            <button type="button" onClick={downloadReport}>
-              レポートを.txtで保存
+          <div className="sheets">
+            <DocumentSheet
+              side="previous"
+              label="前回"
+              hint="比較のもとになる資料"
+              doc={docs.previous}
+              onText={(text) => patchDoc("previous", (d) => ({ ...d, text, error: undefined }))}
+              onFile={(f) => void loadFile("previous", f)}
+              onClear={() => patchDoc("previous", { text: "" })}
+            />
+            <button type="button" className="swap" onClick={swap} title="前回と今回を入れ替える" aria-label="前回と今回を入れ替える">
+              ⇄
             </button>
-          ) : null}
-        </div>
-        {status ? <p className="status">{status}</p> : null}
-      </section>
-
-      {result ? (
-        <section className="card">
-          <h2>トーンの変化</h2>
-          <p className="tone">
-            {result.previousToneLabel}（{result.previousToneScore}pt）→{" "}
-            <strong>
-              {result.currentToneLabel}（{result.currentToneScore}pt）
-            </strong>
-          </p>
-
-          {analysisMeta ? (
-            <p className="status">
-              {analysisMeta.aiStatus === "generated"
-                ? `AI要約: Gemini Flash（${analysisMeta.model ?? "gemini-2.5-flash"}）`
-                : analysisMeta.aiStatus === "not_configured"
-                  ? "AI要約: 未設定のためルールベース解析を表示中です。GEMINI_API_KEYを設定すると有効になります。"
-                  : "AI要約: 生成できなかったためルールベース解析を表示中です。"}
-            </p>
-          ) : null}
-
-          {result.aiSummary ? (
-            <>
-              <h2>AI要約（Gemini Flash）</h2>
-              <p className="tone">{result.aiSummary.headline}</p>
-              <p>{result.aiSummary.overallAssessment}</p>
-              <p>
-                <strong>トーン判断の理由：</strong>
-                {result.aiSummary.toneReason}
-              </p>
-              <div className="envGrid">
-                <article className="envCard">
-                  <h3>事業環境の変化</h3>
-                  <ul>
-                    {result.aiSummary.businessEnvironmentChanges.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                </article>
-                <article className="envCard">
-                  <h3>重要な文言変化</h3>
-                  <ul>
-                    {result.aiSummary.keyChanges.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                </article>
-                <article className="envCard">
-                  <h3>次に確認すべき点</h3>
-                  <ul>
-                    {result.aiSummary.watchPoints.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                </article>
-                <article className="envCard">
-                  <h3>リスク・不確実性</h3>
-                  <ul>
-                    {result.aiSummary.risks.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                </article>
-              </div>
-            </>
-          ) : null}
-
-          <h2>要約</h2>
-          <ul>
-            {result.summaryLines.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
-
-          <h2>事業環境の変化</h2>
-          {result.environmentChanges.length ? (
-            <div className="envGrid">
-              {result.environmentChanges.map((change) => (
-                <article key={change.category} className="envCard">
-                  <h3>{change.category}</h3>
-                  {change.added.map((line) => (
-                    <p key={line} className="addedText">＋ {line}</p>
-                  ))}
-                  {change.removed.map((line) => (
-                    <p key={line} className="removedText">－ {line}</p>
-                  ))}
-                </article>
-              ))}
-            </div>
-          ) : (
-            <p>事業環境カテゴリに該当する変化は検出されませんでした。</p>
-          )}
-
-          <h2>文言の差分</h2>
-          <div className="actions">
-            {(["all", "added", "removed", "rephrased"] as DiffFilter[]).map((value) => (
-              <button
-                key={value}
-                type="button"
-                className={filter === value ? "chip active" : "chip"}
-                onClick={() => setFilter(value)}
-              >
-                {value === "all" && `すべて`}
-                {value === "added" && `追加 ${result.added.length}`}
-                {value === "removed" && `削除 ${result.removed.length}`}
-                {value === "rephrased" && `言い換え ${result.rephrased.length}`}
-              </button>
-            ))}
+            <DocumentSheet
+              side="current"
+              label="今回"
+              hint="新しく出た資料"
+              doc={docs.current}
+              onText={(text) => patchDoc("current", (d) => ({ ...d, text, error: undefined }))}
+              onFile={(f) => void loadFile("current", f)}
+              onClear={() => patchDoc("current", { text: "" })}
+            />
           </div>
 
-          {(filter === "all" || filter === "added") &&
-            result.added.map((line) => (
-              <p key={`a-${line}`} className="diffLine addedText">＋ {line}</p>
-            ))}
-          {(filter === "all" || filter === "removed") &&
-            result.removed.map((line) => (
-              <p key={`r-${line}`} className="diffLine removedText">－ {line}</p>
-            ))}
-          {(filter === "all" || filter === "rephrased") &&
-            result.rephrased.map((pair) => (
-              <div key={pair.before} className="pair">
-                <p className="removedText">前回：{pair.before}</p>
-                <p className="addedText">今回：{pair.after}</p>
-                <p className="similarity">類似度 {Math.round(pair.similarity * 100)}%</p>
-              </div>
-            ))}
+          <div className="intake__actions">
+            <button
+              type="button"
+              className="btn btn--primary"
+              disabled={!ready || analyzing || busy}
+              onClick={() => void analyze()}
+            >
+              {analyzing ? "読み比べています…" : "読み比べる"}
+            </button>
+            <p className="samples">
+              資料が手元になければ、架空の会社のサンプルで試せます：
+              {SAMPLES.map((s) => (
+                <button key={s.id} type="button" className="link" onClick={() => loadSample(s.id)} title={s.description}>
+                  {s.label}
+                </button>
+              ))}
+            </p>
+          </div>
         </section>
-      ) : null}
+      ) : (
+        <section className="intake intake--folded">
+          <p>
+            <span className="intake__tag">前回</span>
+            {docs.previous.fileName ?? "貼り付けたテキスト"}
+            <span className="intake__arrow">→</span>
+            <span className="intake__tag">今回</span>
+            {docs.current.fileName ?? "貼り付けたテキスト"}
+          </p>
+          <button type="button" className="btn btn--ghost" onClick={() => setEditing(true)}>
+            資料を差し替える
+          </button>
+        </section>
+      )}
+
+      <div ref={resultsRef}>
+        {result ? (
+          result.changes.length === 0 ? (
+            <p className="notice">2つの資料の本文は同じでした。前回と今回で別の資料を選んでいるか確認してください。</p>
+          ) : (
+            <ResultView result={result} ai={ai} companyName={companyName} />
+          )
+        ) : null}
+      </div>
 
       <footer className="footer">
-        <p>
-          本ツールは決算資料の文言変化を整理するためのもので、特定銘柄の売買を推奨する
-          投資助言ではありません。
-        </p>
+        決算資料の文言の変化を機械的に整理するツールです。特定の銘柄の売買を勧めるものではありません。
+        資料の本文は解析のためにブラウザ内で処理し、AI要約には変更のあった文だけを送ります。
       </footer>
     </main>
   );
 }
 
-function DocumentInput(props: {
-  title: string;
-  text: string;
-  onTextChange: (value: string) => void;
-  onFile: (file: File | null) => void;
+function DocumentSheet(props: {
+  side: Side;
+  label: string;
+  hint: string;
+  doc: DocState;
+  onText: (text: string) => void;
+  onFile: (file: File) => void;
+  onClear: () => void;
 }) {
+  const { doc } = props;
+  const [over, setOver] = useState(false);
+  const inputId = `file-${props.side}`;
   return (
-    <div className="field">
-      <span>{props.title}</span>
-      <input
-        type="file"
-        accept="application/pdf,.pdf,.txt"
-        onChange={(event) => props.onFile(event.target.files?.[0] ?? null)}
-      />
+    <div
+      className={`sheet ${over ? "is-over" : ""} ${doc.text ? "is-filled" : ""}`}
+      onDragOver={(e) => {
+        e.preventDefault();
+        setOver(true);
+      }}
+      onDragLeave={() => setOver(false)}
+      onDrop={(e) => {
+        e.preventDefault();
+        setOver(false);
+        const file = e.dataTransfer.files?.[0];
+        if (file) props.onFile(file);
+      }}
+    >
+      <div className="sheet__head">
+        <p>
+          <span className="sheet__label">{props.label}</span>
+          <span className="sheet__hint">{props.hint}</span>
+        </p>
+        <label htmlFor={inputId} className="btn btn--ghost btn--small">
+          PDFを選ぶ
+        </label>
+        <input
+          id={inputId}
+          type="file"
+          accept="application/pdf,.pdf,.txt,text/plain"
+          className="visually-hidden"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) props.onFile(file);
+            e.target.value = "";
+          }}
+        />
+      </div>
       <textarea
-        value={props.text}
-        onChange={(event) => props.onTextChange(event.target.value)}
-        placeholder="PDFをアップロードするか、決算短信・決算説明資料の本文を貼り付けてください"
-        rows={12}
+        className="sheet__text"
+        value={doc.text}
+        onChange={(e) => props.onText(e.target.value)}
+        placeholder={"PDFをここにドロップするか、\n決算短信・説明資料の本文を貼り付けてください"}
+        aria-label={`${props.label}の資料の本文`}
       />
+      <div className="sheet__foot">
+        {doc.loading ? (
+          <span>{doc.fileName} を読み込んでいます…</span>
+        ) : doc.error ? (
+          <span className="sheet__error">{doc.error}</span>
+        ) : doc.text ? (
+          <>
+            <span>
+              {doc.fileName ? `${doc.fileName}・` : ""}
+              {doc.pages ? `${doc.pages}ページ・` : ""}
+              <span className="mono">{doc.text.length.toLocaleString()}</span>字
+            </span>
+            <button type="button" className="link" onClick={props.onClear}>
+              クリア
+            </button>
+          </>
+        ) : (
+          <span>未入力</span>
+        )}
+      </div>
     </div>
   );
 }

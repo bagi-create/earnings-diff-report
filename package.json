@@ -10,6 +10,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "tsx": "^4.23.15",
     "typescript": "^5.7.0",
     "wrangler": "^4.153.0"
   },
@@ -24,7 +25,11 @@
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
+    "check:analysis": "tsx --tsconfig tsconfig.json scripts/check-analysis.ts"
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=20"
+  }
 }
