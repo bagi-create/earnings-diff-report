@@ -15,6 +15,13 @@ import {
 
 type DiffFilter = "all" | "added" | "removed" | "rephrased";
 
+type AnalysisMeta = {
+  engine: "gemini-flash" | "rule-based";
+  model: string | null;
+  aiStatus: "generated" | "not_configured" | "fallback";
+  warning?: string;
+};
+
 async function extractPdfText(file: File): Promise<string> {
   const pdfjs = await import("pdfjs-dist");
   pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -45,6 +52,8 @@ export default function EarningsDiffApp() {
   const [filter, setFilter] = useState<DiffFilter>("all");
   const [status, setStatus] = useState("");
   const [result, setResult] = useState<AnalysisResult | null>(null);
+  const [analysisMeta, setAnalysisMeta] = useState<AnalysisMeta | null>(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const canAnalyze = previousText.trim().length > 0 && currentText.trim().length > 0;
 
@@ -75,13 +84,43 @@ export default function EarningsDiffApp() {
       setCurrentText(SAMPLE_CURRENT_CAUTIOUS);
     }
     setResult(null);
+    setAnalysisMeta(null);
     setStatus("サンプルを読み込みました。「差分を解析」を押してください。");
   }
 
-  function analyze() {
-    if (!canAnalyze) return;
-    setResult(analyzeEarningsTexts(previousText, currentText));
-    setStatus("解析が完了しました。");
+  async function analyze() {
+    if (!canAnalyze || isAnalyzing) return;
+
+    setIsAnalyzing(true);
+    setStatus("差分を解析し、Gemini FlashでAI要約を作成しています…");
+
+    try {
+      const response = await fetch("/api/summarize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ companyName, previousText, currentText }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Analysis API failed (${response.status})`);
+      }
+
+      const data = (await response.json()) as AnalysisMeta & { result: AnalysisResult };
+      setResult(data.result);
+      setAnalysisMeta(data);
+      setStatus(
+        data.aiStatus === "generated"
+          ? "解析とAI要約が完了しました。"
+          : data.warning ?? "解析が完了しました。現在はルールベース解析で表示しています。",
+      );
+    } catch {
+      // Keep the tool usable even if the API route or network is unavailable.
+      setResult(analyzeEarningsTexts(previousText, currentText));
+      setAnalysisMeta({ engine: "rule-based", model: null, aiStatus: "fallback" });
+      setStatus("APIに接続できなかったため、ブラウザ内のルールベース解析で表示しています。");
+    } finally {
+      setIsAnalyzing(false);
+    }
   }
 
   function downloadReport() {
@@ -132,8 +171,13 @@ export default function EarningsDiffApp() {
         </div>
 
         <div className="actions">
-          <button type="button" className="primary" onClick={analyze} disabled={!canAnalyze}>
-            差分を解析
+          <button
+            type="button"
+            className="primary"
+            onClick={() => void analyze()}
+            disabled={!canAnalyze || isAnalyzing}
+          >
+            {isAnalyzing ? "解析中…" : "差分を解析"}
           </button>
           <button type="button" onClick={() => loadSample("bullish")}>
             サンプル：中立→強気
@@ -159,6 +203,62 @@ export default function EarningsDiffApp() {
               {result.currentToneLabel}（{result.currentToneScore}pt）
             </strong>
           </p>
+
+          {analysisMeta ? (
+            <p className="status">
+              {analysisMeta.aiStatus === "generated"
+                ? `AI要約: Gemini Flash（${analysisMeta.model ?? "gemini-2.5-flash"}）`
+                : analysisMeta.aiStatus === "not_configured"
+                  ? "AI要約: 未設定のためルールベース解析を表示中です。GEMINI_API_KEYを設定すると有効になります。"
+                  : "AI要約: 生成できなかったためルールベース解析を表示中です。"}
+            </p>
+          ) : null}
+
+          {result.aiSummary ? (
+            <>
+              <h2>AI要約（Gemini Flash）</h2>
+              <p className="tone">{result.aiSummary.headline}</p>
+              <p>{result.aiSummary.overallAssessment}</p>
+              <p>
+                <strong>トーン判断の理由：</strong>
+                {result.aiSummary.toneReason}
+              </p>
+              <div className="envGrid">
+                <article className="envCard">
+                  <h3>事業環境の変化</h3>
+                  <ul>
+                    {result.aiSummary.businessEnvironmentChanges.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="envCard">
+                  <h3>重要な文言変化</h3>
+                  <ul>
+                    {result.aiSummary.keyChanges.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="envCard">
+                  <h3>次に確認すべき点</h3>
+                  <ul>
+                    {result.aiSummary.watchPoints.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="envCard">
+                  <h3>リスク・不確実性</h3>
+                  <ul>
+                    {result.aiSummary.risks.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
+            </>
+          ) : null}
 
           <h2>要約</h2>
           <ul>

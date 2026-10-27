@@ -24,12 +24,19 @@ npm run build
 npm run start
 ```
 
-API キーは不要です（MVP はルールベース解析のみで動作します）。
+API キーがなくてもルールベース解析で動作します。AI要約を使う場合は、Google AI Studioで取得した Gemini API キーを `.env.local` に設定してください。
+
+```bash
+GEMINI_API_KEY=あなたのAPIキー
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+`.env.local` は Git にコミットしないでください。本番環境では、デプロイ先の環境変数に同じ値を設定します。
 
 ## 使い方
 
 1. 前回と今回の決算資料を PDF でアップロードするか、本文テキストを貼り付けます（PDF のテキスト抽出はブラウザ内で行います）。
-2. 「差分を解析」を押すと、トーン変化・要約・事業環境の変化・文言差分が表示されます。
+2. 「差分を解析」を押すと、トーン変化・要約・事業環境の変化・文言差分が表示されます。`GEMINI_API_KEY` を設定している場合は、Gemini Flash によるAI要約も追加で表示されます。
 3. サンプル（中立→強気／強気→慎重）が入っているので、資料がなくても動作を確認できます。
 4. レポートは .txt で保存できます。
 
@@ -41,7 +48,8 @@ API キーは不要です（MVP はルールベース解析のみで動作しま
 | `src/components/EarningsDiffApp.tsx` | アップロード、PDF抽出、結果表示のUI |
 | `src/lib/diff.ts` | 文分割、差分分類（追加／削除／言い換え）、トーン判定、事業環境要約、レポート生成 |
 | `src/lib/samples.ts` | 動作確認用サンプル文 |
-| `src/app/api/summarize/route.ts` | サーバー側解析API（将来のLLM要約の接続点） |
+| `src/lib/gemini.ts` | Gemini Flash への構造化要約リクエストとレスポンス検証 |
+| `src/app/api/summarize/route.ts` | 差分解析API。Gemini要約を試し、失敗時はルールベース結果を返す |
 | `docs/MONETIZATION.md` | 料金プランとマネタイズの設計メモ |
 | `docs/ROADMAP.md` | 本番化に向けた開発ロードマップ |
 

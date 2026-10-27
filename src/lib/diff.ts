@@ -12,6 +12,16 @@ added: string[];
 removed: string[];
 }
 
+export interface AiSummary {
+headline: string;
+overallAssessment: string;
+toneReason: string;
+businessEnvironmentChanges: string[];
+keyChanges: string[];
+watchPoints: string[];
+risks: string[];
+}
+
 export interface AnalysisResult {
 previousSentenceCount: number;
 currentSentenceCount: number;
@@ -25,6 +35,7 @@ previousToneLabel: ToneLabel;
 currentToneLabel: ToneLabel;
 environmentChanges: EnvironmentChange[];
 summaryLines: string[];
+aiSummary?: AiSummary;
 }
 
 const BULLISH_WORDS: Array<[string, number]> = [
@@ -274,6 +285,19 @@ title,
 "",
 "## 要約",
 ...result.summaryLines.map((line) => `- ${line}`),
+...(result.aiSummary
+? [
+"",
+"## AI要約（Gemini Flash）",
+`- ${result.aiSummary.headline}`,
+`- ${result.aiSummary.overallAssessment}`,
+`- トーン判断の理由: ${result.aiSummary.toneReason}`,
+...result.aiSummary.businessEnvironmentChanges.map((line) => `- 事業環境: ${line}`),
+...result.aiSummary.keyChanges.map((line) => `- 重要な変化: ${line}`),
+...result.aiSummary.watchPoints.map((line) => `- 確認ポイント: ${line}`),
+...result.aiSummary.risks.map((line) => `- リスク・不確実性: ${line}`),
+]
+: []),
 "",
 "## 追加された文言",
 ...(result.added.length? result.added.map((line) => `- ${line}`): ["- なし"]),
