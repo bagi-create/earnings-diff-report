@@ -11,13 +11,21 @@
  * to data/out/reports/ as soon as it is done, so the run can stop (daily
  * quota) and continue later. Indexes for the pages are written at the end.
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { analyzeEarningsTexts, ANALYSIS_VERSION } from "../src/lib/analyze";
 import { computeDigest, type DigestHistory } from "../src/lib/anomaly";
 import { getGeminiModel, isGeminiConfigured, PROMPT_VERSION, summarizeWithGemini } from "../src/lib/gemini";
 import { buildSummaryPayload } from "../src/lib/summaryPayload";
-import type { CompanyIndex, ComparisonKind, Core30Index, PeriodDoc, StoredReport } from "../src/lib/reportTypes";
+import type {
+  CompanyIndex,
+  ComparisonKind,
+  Core30Index,
+  DeepAnalysis,
+  DeepFinding,
+  PeriodDoc,
+  StoredReport,
+} from "../src/lib/reportTypes";
 import {
   docId,
   loadSources,
@@ -32,6 +40,7 @@ import {
   type SourceDocument,
 } from "./lib/documents";
 import { sentenceIndex } from "./lib/history";
+import { quoteStatus } from "./lib/quotes";
 
 const PERIODS = 8;
 const args = process.argv.slice(2);
@@ -258,6 +267,55 @@ function writeIndexes(companies: SourceCompany[]) {
   writeFileSync(join(OUT_DIR, "index", "core30.json"), JSON.stringify(core30));
 }
 
+/**
+ * Copy full-document AI readings (data/out/prototype/<code>.deep.json, written by
+ * scripts/prototype/deep-analysis.ts) into the stored report they belong to.
+ * Quotes that cannot be found in the source text are dropped, as are unknown change ids.
+ */
+function attachDeepAnalyses() {
+  const dir = join(OUT_DIR, "prototype");
+  if (!existsSync(dir)) return;
+  for (const name of readdirSync(dir).filter((f) => /^\d{4}\.deep\.json$/.test(f))) {
+    const code = name.slice(0, 4);
+    const call = JSON.parse(readFileSync(join(dir, name), "utf8")) as {
+      model: string;
+      text: string;
+      report?: { type: DocType; kind: ComparisonKind; fy: number; q: number };
+    };
+    if (!call.report) continue;
+    const file = reportFile(code, call.report.type, call.report.kind, call.report.fy, call.report.q);
+    if (!existsSync(file)) continue;
+    const report = JSON.parse(readFileSync(file, "utf8")) as StoredReport;
+    const company = loadSources().find((c) => c.code === code);
+    const docText = (p: PeriodDoc) => {
+      const d = company?.documents.find((x) => x.type === report.type && x.fy === p.fy && x.q === p.q);
+      return d ? readFileSync(join(TEXT_DIR, `${docId(code, d)}.txt`), "utf8") : "";
+    };
+    const sources = { 前回: docText(report.base), 今回: docText(report.target) };
+    const ids = new Set(report.result.changes.map((c) => c.id));
+    const parsed = JSON.parse(call.text) as Omit<DeepAnalysis, "model" | "createdAt">;
+    const clean = (f: DeepFinding): DeepFinding => ({
+      ...f,
+      quotes: f.quotes.filter((q) => quoteStatus(q.text, sources[q.doc] ?? "") !== "見つからない"),
+      changeIds: f.changeIds.filter((id) => ids.has(id)),
+    });
+    report.deep = {
+      model: call.model,
+      createdAt: statSync(join(dir, name)).mtime.toISOString(),
+      headline: parsed.headline,
+      whatHappened: parsed.whatHappened,
+      comparisonNote: parsed.comparisonNote,
+      hypotheses: parsed.hypotheses.map(clean),
+      removedMeaning: parsed.removedMeaning.map(clean),
+      formatDriven: parsed.formatDriven,
+      peerContext: parsed.peerContext,
+      watchNext: parsed.watchNext,
+    };
+    writeFileSync(file, JSON.stringify(report));
+    console.log(`  AIの読み解きを追加: ${code} ${report.type} ${report.kind} FY${report.target.fy}-${report.target.q}Q`);
+  }
+}
+
 async function main() {
   mkdirSync(join(OUT_DIR, "index"), { recursive: true });
   if (useAi && !isGeminiConfigured()) console.warn(".env.local に GEMINI_API_KEY がないため、AI要約なしで作ります。");
@@ -266,6 +324,7 @@ async function main() {
     console.log(`${company.code} ${company.name}`);
     await buildCompany(company);
   }
+  attachDeepAnalyses();
   writeIndexes(loadSources());
   if (aiStopped) console.warn(`\nAI要約は途中で止めました（${aiStopped}）。時間をおいて同じコマンドを再実行すると続きから作ります。`);
 }

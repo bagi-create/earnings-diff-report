@@ -16,6 +16,7 @@ import { join } from "node:path";
 import { maskNumbers, normalizeSentence, segmentDocument } from "../../src/lib/segment";
 import type { StoredReport } from "../../src/lib/reportTypes";
 import { docId, loadSources, OUT_DIR, periodIndex, ROOT, TEXT_DIR } from "../lib/documents";
+import { quoteStatus } from "../lib/quotes";
 
 // 3.8 and 3.7 Flash were both overloaded (503) on 2026-10-28, so busy calls rotate through these.
 // Unknown prices show as tokens only.
@@ -452,21 +453,7 @@ function baselinePrompt(report: StoredReport, prev: string, curr: string) {
   ].join("\n");
 }
 
-// ---------- 5. quote check ----------
-
-const norm = (s: string) => s.normalize("NFKC").replace(/[\s…「」『』]/g, "");
-
-function quoteStatus(quote: string, source: string): "一致" | "ほぼ一致" | "見つからない" {
-  const q = norm(quote);
-  const src = norm(source);
-  if (!q) return "見つからない";
-  if (src.includes(q)) return "一致";
-  const chunks: string[] = [];
-  for (let i = 0; i + 10 <= q.length; i += 10) chunks.push(q.slice(i, i + 10));
-  if (chunks.length === 0) return "見つからない";
-  const found = chunks.filter((c) => src.includes(c)).length / chunks.length;
-  return found >= 0.7 ? "ほぼ一致" : "見つからない";
-}
+// ---------- 5. quote check: scripts/lib/quotes.ts ----------
 
 // ---------- main ----------
 
@@ -514,7 +501,9 @@ async function run(code: string) {
     const file = join(PROTO_DIR, `${code}.${name}.json`);
     if (existsSync(file)) return JSON.parse(readFileSync(file, "utf8")) as CallResult;
     const result = await call();
-    writeFileSync(file, JSON.stringify(result));
+    // `report` tells scripts/build-reports.ts which stored report the analysis belongs to.
+    const report_ = { type: report.type, kind: report.kind, fy: report.target.fy, q: report.target.q };
+    writeFileSync(file, JSON.stringify({ ...result, report: report_ }));
     return result;
   };
 

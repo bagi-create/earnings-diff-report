@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import DeepAnalysisView from "@/components/DeepAnalysisView";
 import ResultView, { type AiState } from "@/components/ResultView";
 import { isMeaningfulSignal, signed } from "@/components/parts";
 import {
@@ -177,12 +178,29 @@ export default function CompanyView({
       ) : (
         <>
           <Sources base={report.base} target={report.target} />
-          {kind === "qoq" && report.target.q === 1 ? (
-            <p className="notice">
-              第1四半期の前四半期比は、前年度の通期の資料と比べています。資料の構成が違うため、変更が多めに出ます。
-            </p>
-          ) : null}
-          <ResultView key={`${type}-${kind}-${selected}`} result={report.result} ai={ai} companyName={index.name} />
+          {report.deep ? (
+            <>
+              <DeepAnalysisView deep={report.deep} changes={report.result.changes} />
+              {/* The AI reading comes first; the rule-based diff is its evidence, opened on demand. */}
+              <details className="group mb-8">
+                <summary className="cursor-pointer select-none rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 text-sm text-zinc-300 hover:border-zinc-600">
+                  自動解析の詳細を見る（文ごとの差分・トーン・数値）
+                </summary>
+                <div className="mt-6">
+                  <ResultView key={`${type}-${kind}-${selected}`} result={report.result} ai={ai} companyName={index.name} />
+                </div>
+              </details>
+            </>
+          ) : (
+            <>
+              {kind === "qoq" && report.target.q === 1 ? (
+                <p className="notice">
+                  第1四半期の前四半期比は、前年度の通期の資料と比べています。資料の構成が違うため、変更が多めに出ます。
+                </p>
+              ) : null}
+              <ResultView key={`${type}-${kind}-${selected}`} result={report.result} ai={ai} companyName={index.name} />
+            </>
+          )}
         </>
       )}
     </div>

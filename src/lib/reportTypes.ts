@@ -30,6 +30,36 @@ export interface StoredReport {
     promptVersion: number;
     usage: { inputTokens: number; outputTokens: number; estimatedUsd: number };
   };
+  /** Full-document AI reading (scripts/prototype/deep-analysis.ts). Only on some reports for now. */
+  deep?: DeepAnalysis;
+}
+
+export interface DeepQuote {
+  doc: "前回" | "今回";
+  text: string;
+}
+
+export interface DeepFinding {
+  title: string;
+  detail: string;
+  confidence: "高" | "中" | "低";
+  /** Only quotes found in the source text are kept. */
+  quotes: DeepQuote[];
+  /** Change ids (C12 …) in this report's result. */
+  changeIds: string[];
+}
+
+export interface DeepAnalysis {
+  model: string;
+  createdAt: string;
+  headline: string;
+  whatHappened: string;
+  comparisonNote: string;
+  hypotheses: DeepFinding[];
+  removedMeaning: DeepFinding[];
+  formatDriven: string[];
+  peerContext: string;
+  watchNext: string[];
 }
 
 export interface ComparisonSummary {
