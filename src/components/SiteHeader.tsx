@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import BrandMark from "@/components/BrandMark";
 
 const NAV = [
-  { href: "/", label: "銘柄から探す", match: (p: string) => !p.startsWith("/compare") },
-  { href: "/compare", label: "自分の資料で比べる", match: (p: string) => p.startsWith("/compare") },
+  { href: "/", label: "銘柄から探す", short: "銘柄", match: (p: string) => !p.startsWith("/compare") && !p.startsWith("/search") },
+  { href: "/search", label: "言葉で探す", short: "言葉で探す", match: (p: string) => p.startsWith("/search") },
+  { href: "/compare", label: "自分の資料で比べる", short: "資料で比べる", match: (p: string) => p.startsWith("/compare") },
 ];
 
 export default function SiteHeader() {
@@ -32,7 +33,8 @@ export default function SiteHeader() {
                   active ? "bg-zinc-800 text-zinc-50" : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-100"
                 }`}
               >
-                {item.label}
+                <span className="sm:hidden">{item.short}</span>
+                <span className="hidden sm:inline">{item.label}</span>
               </Link>
             );
           })}

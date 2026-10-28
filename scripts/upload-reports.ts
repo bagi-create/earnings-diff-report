@@ -15,11 +15,15 @@ import {
   companyKey,
   CORE30_KEY,
   periodKey,
+  DOCS_KEY,
+  docTextKey,
+  indexShardKey,
   seriesKey,
   type ReportSeries,
   type StoredReport,
 } from "../src/lib/reportTypes";
 import { OUT_DIR, ROOT } from "./lib/documents";
+import { DOCS_FILE } from "./lib/searchFile";
 
 const target = process.argv.includes("--remote") ? "--remote" : "--local";
 const MAX_BATCH_BYTES = 40 * 1024 * 1024;
@@ -42,7 +46,22 @@ function main() {
   const indexDir = join(OUT_DIR, "index");
   for (const file of readdirSync(indexDir)) {
     const value = readFileSync(join(indexDir, file), "utf8");
-    entries.push({ key: file === "core30.json" ? CORE30_KEY : companyKey(file.replace(".json", "")), value });
+    const key =
+      file === "core30.json" ? CORE30_KEY : file === DOCS_FILE ? DOCS_KEY : companyKey(file.replace(".json", ""));
+    entries.push({ key, value });
+  }
+
+  // Full-text search: index shards and one plain-text value per document.
+  const searchDir = join(OUT_DIR, "search");
+  if (existsSync(searchDir)) {
+    for (const file of readdirSync(join(searchDir, "shards"))) {
+      const value = readFileSync(join(searchDir, "shards", file), "utf8");
+      entries.push({ key: indexShardKey(Number(file.replace(".json", ""))), value });
+    }
+    for (const file of readdirSync(join(searchDir, "texts"))) {
+      const value = readFileSync(join(searchDir, "texts", file), "utf8");
+      entries.push({ key: docTextKey(file.replace(".txt", "")), value });
+    }
   }
 
   // Split into files below the bulk upload size limit.

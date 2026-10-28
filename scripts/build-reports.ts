@@ -11,7 +11,7 @@
  * to data/out/reports/ as soon as it is done, so the run can stop (daily
  * quota) and continue later. Indexes for the pages are written at the end.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { analyzeEarningsTexts, ANALYSIS_VERSION } from "../src/lib/analyze";
 import { computeDigest, type DigestHistory } from "../src/lib/anomaly";
@@ -24,6 +24,7 @@ import type {
   DeepAnalysis,
   DeepFinding,
   PeriodDoc,
+  DocMeta,
   StoredReport,
 } from "../src/lib/reportTypes";
 import {
@@ -41,6 +42,9 @@ import {
 } from "./lib/documents";
 import { sentenceIndex } from "./lib/history";
 import { quoteStatus } from "./lib/quotes";
+import { bigrams, INDEX_SHARDS, shardOf, type IndexShard } from "../src/lib/docSearch";
+import { searchableText } from "./lib/docText";
+import { DOCS_FILE } from "./lib/searchFile";
 
 const PERIODS = 8;
 const args = process.argv.slice(2);
@@ -244,9 +248,8 @@ function writeIndexes(companies: SourceCompany[]) {
     const headlineFile = latest && headline ? reportFile(company.code, headline.type, headline.kind, latest.fy, latest.q) : null;
     const headlineReport =
       headlineFile && existsSync(headlineFile) ? (JSON.parse(readFileSync(headlineFile, "utf8")) as StoredReport) : null;
-    const digest = headlineReport
-      ? computeDigest(headlineReport.result, digestHistory(company, headlineReport))
-      : undefined;
+    const history = headlineReport ? digestHistory(company, headlineReport) : undefined;
+    const digest = headlineReport ? computeDigest(headlineReport.result, history) : undefined;
     // Tone and disclosure signals compare like with like: the same quarter of the previous year.
     // Against the previous quarter, a 第1四半期 短信 always "loses" the 通期 dividend policy and tone.
     const toneSource =
@@ -265,6 +268,51 @@ function writeIndexes(companies: SourceCompany[]) {
     });
   }
   writeFileSync(join(OUT_DIR, "index", "core30.json"), JSON.stringify(core30));
+}
+
+/**
+ * Full-text search data: a small list of every document (date, link, …), the text of each
+ * document, and a bigram index split into INDEX_SHARDS parts, so a search reads only the
+ * shards its keywords fall in and the texts of the documents it shows.
+ */
+function writeDocIndex(companies: SourceCompany[]) {
+  const docs: Array<{ meta: DocMeta; text: string }> = [];
+  for (const company of companies) {
+    for (const d of company.documents) {
+      const file = join(TEXT_DIR, `${docId(company.code, d)}.txt`);
+      if (!existsSync(file)) continue;
+      docs.push({
+        meta: {
+          id: docId(company.code, d),
+          code: company.code,
+          name: company.name,
+          type: d.type,
+          official: officialPeriod(d.fy, d.q, company.fiscalYearEnd),
+          title: d.title ?? null,
+          date: d.date ?? null,
+          url: d.url,
+        },
+        text: searchableText(readFileSync(file, "utf8")),
+      });
+    }
+  }
+  docs.sort((a, b) => (b.meta.date ?? "").localeCompare(a.meta.date ?? "") || a.meta.code.localeCompare(b.meta.code));
+
+  const shards: IndexShard[] = Array.from({ length: INDEX_SHARDS }, () => ({}));
+  docs.forEach(({ text }, position) => {
+    for (const gram of bigrams(text)) (shards[shardOf(gram)][gram] ??= []).push(position);
+  });
+
+  const dir = join(OUT_DIR, "search");
+  rmSync(dir, { recursive: true, force: true });
+  rmSync(join(OUT_DIR, "docpacks"), { recursive: true, force: true });
+  mkdirSync(join(dir, "shards"), { recursive: true });
+  mkdirSync(join(dir, "texts"), { recursive: true });
+  writeFileSync(join(OUT_DIR, "index", DOCS_FILE), JSON.stringify(docs.map((d) => d.meta)));
+  shards.forEach((shard, i) => writeFileSync(join(dir, "shards", `${i}.json`), JSON.stringify(shard)));
+  for (const { meta, text } of docs) writeFileSync(join(dir, "texts", `${meta.id}.txt`), text);
+  const grams = shards.reduce((n, s) => n + Object.keys(s).length, 0);
+  console.log(`全文検索: 資料${docs.length}本・2文字の組${grams.toLocaleString()}種類`);
 }
 
 /**
@@ -326,6 +374,7 @@ async function main() {
   }
   attachDeepAnalyses();
   writeIndexes(loadSources());
+  writeDocIndex(loadSources());
   if (aiStopped) console.warn(`\nAI要約は途中で止めました（${aiStopped}）。時間をおいて同じコマンドを再実行すると続きから作ります。`);
 }
 

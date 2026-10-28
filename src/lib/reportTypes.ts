@@ -141,4 +141,27 @@ export const seriesKey = (code: string, type: ReportDocType, kind: ComparisonKin
   `series:${code}:${type}:${kind}`;
 export const companyKey = (code: string) => `company:${code}`;
 export const CORE30_KEY = "core30";
+/**
+ * Metadata of every disclosure document with text, for the full-text search (one small value).
+ * The list order is fixed at build time: index shards refer to documents by position in it.
+ */
+export const DOCS_KEY = "docs:list";
+/** Searchable text of one document (plain text, see scripts/lib/docText.ts). */
+export const docTextKey = (id: string) => `doc:${id}`;
+/** One shard of the bigram index (see src/lib/docSearch.ts). */
+export const indexShardKey = (shard: number) => `sidx:${shard}`;
+
+export interface DocMeta {
+  /** e.g. "5803-FY2027-1Q-tanshin" */
+  id: string;
+  code: string;
+  name: string;
+  type: ReportDocType;
+  /** e.g. "2027年3月期 第1四半期" */
+  official: string;
+  title: string | null;
+  /** Disclosure date "YYYY-MM-DD"; null when unknown. */
+  date: string | null;
+  url: string;
+}
 export const periodKey = (fy: number, q: number) => `FY${fy}-${q}Q`;

@@ -4,7 +4,8 @@ import { AUTH_COOKIE, authToken } from "@/lib/prototypeAuth";
 /**
  * The pre-generated company pages are a private prototype: they need the
  * PROTOTYPE_PASSWORD secret (entered once on /login, kept as a cookie).
- * Without the secret the pages stay closed. Search and /compare stay public.
+ * Without the secret the pages stay closed. The cross-company search shows the same report text,
+ * so it is closed too. The home page company search and /compare stay public.
  */
 export async function middleware(request: NextRequest) {
   const password = process.env.PROTOTYPE_PASSWORD;
@@ -20,5 +21,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/company/:path*", "/api/reports/:path*"],
+  matcher: ["/company/:path*", "/search/:path*", "/api/reports/:path*"],
 };
