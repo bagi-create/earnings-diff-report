@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "決算差分レポート",
+  title: { default: "DeltaLens｜会社の変化（Δ）を決算からすばやく読み解く", template: "%s｜DeltaLens" },
   description:
-    "前回と今回の決算資料を読み比べ、書き加えられた記述・消えた記述・言い回しの変化、トーンと開示シグナルの変化を整理します。",
+    "決算短信・説明資料を前四半期・前年同期と読み比べ、書き加えられたリスク、消えた強気の表現、前提条件の変化を可視化します。",
+  applicationName: "DeltaLens",
 };
+
+export const viewport: Viewport = { themeColor: "#09090b", colorScheme: "dark" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,12 +19,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;500;700&display=swap"
         />
       </head>
-      <body>
+      <body className="min-h-screen">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:rounded focus:bg-zinc-100 focus:px-3 focus:py-2 focus:text-zinc-950"
+        >
+          本文へスキップ
+        </a>
         <SiteHeader />
-        {children}
+        <div id="main">{children}</div>
       </body>
     </html>
   );

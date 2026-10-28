@@ -25,7 +25,7 @@ function points(title: string, items: EvidencePoint[]): string[] {
 /** Markdown report, readable as-is and pasteable into Notion / Slack / docs. */
 export function toMarkdownReport(r: AnalysisResult, companyName = ""): string {
   const byId = new Map(r.changes.map((c) => [c.id, c]));
-  const title = companyName ? `${companyName} 決算差分レポート` : "決算差分レポート";
+  const title = companyName ? `${companyName} 決算差分（DeltaLens）` : "決算差分（DeltaLens）";
   const lines: string[] = [
     `# ${title}`,
     "",

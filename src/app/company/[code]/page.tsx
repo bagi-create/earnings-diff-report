@@ -11,7 +11,7 @@ type Params = { params: Promise<{ code: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const company = findCompany((await params).code);
-  return { title: company ? `${company.name}（${company.code}）｜決算差分レポート` : "銘柄が見つかりません" };
+  return { title: company ? `${company.name}（${company.code}）` : "銘柄が見つかりません" };
 }
 
 export default async function CompanyPage({ params }: Params) {

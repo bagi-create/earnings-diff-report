@@ -14,6 +14,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { analyzeEarningsTexts, ANALYSIS_VERSION } from "../src/lib/analyze";
+import { computeDigest } from "../src/lib/anomaly";
 import { getGeminiModel, isGeminiConfigured, PROMPT_VERSION, summarizeWithGemini } from "../src/lib/gemini";
 import { buildSummaryPayload } from "../src/lib/summaryPayload";
 import type { CompanyIndex, ComparisonKind, Core30Index, PeriodDoc, StoredReport } from "../src/lib/reportTypes";
@@ -181,6 +182,11 @@ function writeIndexes(companies: SourceCompany[]) {
 
     const latest = list[0];
     const headline = latest?.comparisons.find((c) => c.type === "tanshin" && c.kind === "qoq") ?? latest?.comparisons[0];
+    const headlineFile = latest && headline ? reportFile(company.code, headline.type, headline.kind, latest.fy, latest.q) : null;
+    const digest =
+      headlineFile && existsSync(headlineFile)
+        ? computeDigest((JSON.parse(readFileSync(headlineFile, "utf8")) as StoredReport).result)
+        : undefined;
     core30.companies.push({
       code: company.code,
       name: company.name,
@@ -190,6 +196,7 @@ function writeIndexes(companies: SourceCompany[]) {
       signals: headline?.signals ?? [],
       periods: list.length,
       hasPresentation: list.some((p) => p.docs.presentation),
+      digest,
     });
   }
   writeFileSync(join(OUT_DIR, "index", "core30.json"), JSON.stringify(core30));

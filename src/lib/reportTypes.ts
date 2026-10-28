@@ -56,6 +56,20 @@ export interface CompanyIndex {
   >;
 }
 
+/** Figures for the home page badges, computed at build time from the latest comparison. */
+export interface CoreDigest {
+  /** Changed sentences excluding number-only updates. */
+  changes: number;
+  /** Share of current sentences that are new or reworded (0-1). */
+  changeRatio: number;
+  /** Added sentences that mention risk or uncertainty. */
+  riskAdded: number;
+  /** Removed or weakened positive expressions. */
+  positiveRemoved: number;
+  /** Rewritten sentences about forecast premises (FX, assumptions, plans). */
+  premiseChanges: number;
+}
+
 export interface Core30Index {
   generatedAt: string;
   companies: Array<{
@@ -67,6 +81,8 @@ export interface Core30Index {
     signals: ComparisonSummary["signals"];
     periods: number;
     hasPresentation: boolean;
+    /** Missing in indexes built before the DeltaLens redesign. */
+    digest?: CoreDigest;
   }>;
 }
 

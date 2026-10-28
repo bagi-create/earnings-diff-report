@@ -95,7 +95,7 @@ export default function ResultView(props: {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${companyName || "決算差分レポート"}.md`;
+    a.download = `${companyName || "DeltaLens"}_決算差分.md`;
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -149,8 +149,8 @@ export default function ResultView(props: {
         <div className="layout__main">
           <AiPanel ai={ai} onJump={jumpTo} />
 
-          <section className="block">
-            <h3 className="block__title">自動解析の要点</h3>
+          <section className="section-block">
+            <h3 className="section-block__title">自動解析の要点</h3>
             <ul className="bullets">
               {result.summaryLines.map((line) => (
                 <li key={line}>{line}</li>
@@ -158,9 +158,9 @@ export default function ResultView(props: {
             </ul>
           </section>
 
-          <section className="block">
-            <h3 className="block__title">注目の変化</h3>
-            <p className="block__note">重要度の高い順。開示シグナル・見通し・トーンの動きを重く評価しています。</p>
+          <section className="section-block">
+            <h3 className="section-block__title">注目の変化</h3>
+            <p className="section-block__note">重要度の高い順。開示シグナル・見通し・トーンの動きを重く評価しています。</p>
             <ol className="highlights">
               {result.highlights.slice(0, 6).map((id) => {
                 const c = byId.get(id)!;
@@ -174,9 +174,9 @@ export default function ResultView(props: {
             </ol>
           </section>
 
-          <section className="block" ref={explorerRef} id="explorer">
-            <div className="block__head">
-              <h3 className="block__title">すべての変更</h3>
+          <section className="section-block" ref={explorerRef} id="explorer">
+            <div className="section-block__head">
+              <h3 className="section-block__title">すべての変更</h3>
               <label className="toggle">
                 <input type="checkbox" checked={split} onChange={(e) => setSplit(e.target.checked)} />
                 前回・今回を並べる
@@ -369,9 +369,9 @@ function AiPanel({ ai, onJump }: { ai: AiState | null; onJump: (id: string) => v
   if (!ai) return null;
   if (ai.status === "loading") {
     return (
-      <section className="block ai is-loading" aria-busy="true">
-        <h3 className="block__title">AI要約</h3>
-        <p className="block__note">変更点をもとに要約を作成しています…</p>
+      <section className="section-block ai is-loading" aria-busy="true">
+        <h3 className="section-block__title">AI要約</h3>
+        <p className="section-block__note">変更点をもとに要約を作成しています…</p>
         <div className="shimmer" />
         <div className="shimmer is-short" />
         <div className="shimmer" />
@@ -387,8 +387,8 @@ function AiPanel({ ai, onJump }: { ai: AiState | null; onJump: (id: string) => v
   }
   const s = ai.aiSummary;
   return (
-    <section className="block ai">
-      <h3 className="block__title">AI要約</h3>
+    <section className="section-block ai">
+      <h3 className="section-block__title">AI要約</h3>
       <p className="ai__overview">{s.overview}</p>
       <p className="ai__tone">
         <span className="ai__toneLabel">{s.toneDirection}</span>

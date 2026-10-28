@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { safeNext } from "@/lib/prototypeAuth";
 
-export const metadata: Metadata = { title: "パスワード｜決算差分レポート" };
+export const metadata: Metadata = { title: "パスワード" };
 
 export default async function LoginPage({
   searchParams,
