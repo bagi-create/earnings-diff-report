@@ -14,7 +14,7 @@ export default function HighlightCards({ items }: { items: CompanyInsight[] }) {
             今期、文言の変化が大きかった3社
           </h2>
         </div>
-        <p className="m-0 text-xs text-zinc-500">最新決算の決算短信を前四半期と比べた結果</p>
+        <p className="m-0 text-xs text-zinc-500">最新決算の決算短信を、資料の種類による毎年の違いを除いて比べた結果</p>
       </div>
       <ol className="m-0 grid list-none gap-3 p-0 md:grid-cols-3">
         {items.map((item, i) => (

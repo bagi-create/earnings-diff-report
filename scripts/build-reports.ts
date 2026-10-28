@@ -14,7 +14,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { analyzeEarningsTexts, ANALYSIS_VERSION } from "../src/lib/analyze";
-import { computeDigest } from "../src/lib/anomaly";
+import { computeDigest, type DigestHistory } from "../src/lib/anomaly";
 import { getGeminiModel, isGeminiConfigured, PROMPT_VERSION, summarizeWithGemini } from "../src/lib/gemini";
 import { buildSummaryPayload } from "../src/lib/summaryPayload";
 import type { CompanyIndex, ComparisonKind, Core30Index, PeriodDoc, StoredReport } from "../src/lib/reportTypes";
@@ -31,6 +31,7 @@ import {
   type SourceCompany,
   type SourceDocument,
 } from "./lib/documents";
+import { sentenceIndex } from "./lib/history";
 
 const PERIODS = 8;
 const args = process.argv.slice(2);
@@ -136,6 +137,55 @@ async function buildCompany(company: SourceCompany) {
   }
 }
 
+/** Sentences that appeared in at least this many of the recent documents count as long-standing. */
+const LONG_STANDING = { minPresent: 6, window: 8 };
+
+/** Footnotes that explain a past event (e.g. a 2024 stock split) and drop out once it is old news. */
+const EXPIRING_NOTE = /^[（(]?注|^※|株式分割|株式併合|効力発生日|遡及/;
+
+/**
+ * Past-document checks for the home page digest:
+ * - routine: the change also separates this document from the same quarter last year's,
+ *   i.e. it happens every year because the document type differs (通期 → 第1四半期 etc.)
+ * - long-standing: a removed sentence that had been in most of the recent documents
+ */
+function digestHistory(company: SourceCompany, report: StoredReport): DigestHistory | undefined {
+  const { type, target } = report;
+  const mode = type === "presentation" ? "slides" : "tanshin";
+  const docs = company.documents.filter(
+    (d) => d.type === type && existsSync(join(TEXT_DIR, `${docId(company.code, d)}.txt`)),
+  );
+  const read = (d: SourceDocument) =>
+    sentenceIndex(readFileSync(join(TEXT_DIR, `${docId(company.code, d)}.txt`), "utf8"), mode);
+
+  const lastYearDoc = docs.find((d) => d.fy === target.fy - 1 && d.q === target.q);
+  const currentDoc = docs.find((d) => d.fy === target.fy && d.q === target.q);
+  if (!lastYearDoc || !currentDoc) return undefined;
+  const lastYear = read(lastYearDoc);
+  const current = read(currentDoc);
+  const recent = docs
+    .filter((d) => periodIndex(d.fy, d.q) < periodIndex(target.fy, target.q))
+    .sort((a, b) => periodIndex(b.fy, b.q) - periodIndex(a.fy, a.q))
+    .slice(0, LONG_STANDING.window)
+    .map(read);
+
+  return {
+    isRoutine(c) {
+      // Gone now, but also absent a year ago: this quarter's document never carries it.
+      if (c.kind === "removed") return Boolean(c.before) && !lastYear.has(c.before!);
+      // New against last quarter, but the same quarter last year had it: it comes back every year.
+      return Boolean(c.after) && lastYear.has(c.after!);
+    },
+    isLongStanding(c) {
+      if (c.kind !== "removed" || !c.before || recent.length < LONG_STANDING.minPresent) return false;
+      if (!/[。、]/.test(c.before) || EXPIRING_NOTE.test(c.before)) return false;
+      // The aligner sometimes leaves a repeated sentence unpaired although the new document still has it.
+      if (current.has(c.before)) return false;
+      return recent.filter((doc) => doc.has(c.before!)).length >= LONG_STANDING.minPresent;
+    },
+  };
+}
+
 /** Indexes the pages read: one per company and one for the Core30 list. */
 function writeIndexes(companies: SourceCompany[]) {
   const core30: Core30Index = { generatedAt: new Date().toISOString(), companies: [] };
@@ -183,17 +233,23 @@ function writeIndexes(companies: SourceCompany[]) {
     const latest = list[0];
     const headline = latest?.comparisons.find((c) => c.type === "tanshin" && c.kind === "qoq") ?? latest?.comparisons[0];
     const headlineFile = latest && headline ? reportFile(company.code, headline.type, headline.kind, latest.fy, latest.q) : null;
-    const digest =
-      headlineFile && existsSync(headlineFile)
-        ? computeDigest((JSON.parse(readFileSync(headlineFile, "utf8")) as StoredReport).result)
-        : undefined;
+    const headlineReport =
+      headlineFile && existsSync(headlineFile) ? (JSON.parse(readFileSync(headlineFile, "utf8")) as StoredReport) : null;
+    const digest = headlineReport
+      ? computeDigest(headlineReport.result, digestHistory(company, headlineReport))
+      : undefined;
+    // Tone and disclosure signals compare like with like: the same quarter of the previous year.
+    // Against the previous quarter, a 第1四半期 短信 always "loses" the 通期 dividend policy and tone.
+    const toneSource =
+      (headline && latest?.comparisons.find((c) => c.type === headline.type && c.kind === "yoy")) ?? headline;
     core30.companies.push({
       code: company.code,
       name: company.name,
       latest: latest ? { label: latest.label, official: latest.official } : null,
-      toneBefore: headline?.toneBefore ?? null,
-      toneAfter: headline?.toneAfter ?? null,
-      signals: headline?.signals ?? [],
+      toneBefore: toneSource?.toneBefore ?? null,
+      toneAfter: toneSource?.toneAfter ?? null,
+      signals: toneSource?.signals ?? [],
+      toneBasis: toneSource?.kind,
       periods: list.length,
       hasPresentation: list.some((p) => p.docs.presentation),
       digest,

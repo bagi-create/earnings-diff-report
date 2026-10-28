@@ -65,7 +65,9 @@ export default async function Page() {
               TOPIX Core30
             </h2>
           </div>
-          <p className="m-0 text-xs text-zinc-500">2026年10月30日の入替後の構成。バッジは最新決算の前四半期比で判定</p>
+          <p className="m-0 text-xs text-zinc-500">
+            2026年10月30日の入替後の構成。バッジは最新決算の決算短信を、前四半期と前年同期の資料に照らして判定
+          </p>
         </div>
         <Core30List rows={rows} />
         <Criteria />
@@ -121,6 +123,16 @@ function Criteria() {
           </div>
         ))}
       </dl>
+      <ul className="m-0 mt-3 list-disc space-y-1 pl-5 leading-relaxed text-zinc-400">
+        <li>
+          通期と四半期のように資料の種類が違うと、毎年同じ文が消えたり戻ったりします。前年同期の資料にも同じ違いがある変化は、異変として数えません。
+        </li>
+        <li>トーンと、業績予想・配当・自己株式取得の記載は、同じ種類の資料どうし（前年同期）で比べます。</li>
+        <li>
+          直近8期のうち6期以上に載っていた文が今回消えた場合は「長く続いた記述が消えた」として、注目度を高めます。過去の株式分割の注記など、時間がたてば外れる補足は除きます。
+        </li>
+        <li>表の項目名がつながった断片は、文として読めないため判定に使いません。</li>
+      </ul>
     </details>
   );
 }

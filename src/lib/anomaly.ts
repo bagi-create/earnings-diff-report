@@ -1,5 +1,5 @@
 import { toneLabel } from "@/lib/tone";
-import type { AnalysisResult, ToneLabel } from "@/lib/types";
+import type { AnalysisResult, Change, ToneLabel } from "@/lib/types";
 import type { Core30Index, CoreDigest } from "@/lib/reportTypes";
 
 /**
@@ -22,6 +22,12 @@ export const ANOMALY_LABEL: Record<AnomalyKind, string> = {
 const RISK_TERMS =
   /リスク|不透明|不確実|懸念|おそれ|恐れ|可能性があ|注視|予断を許さない|減損|下振れ|悪化|訴訟|リコール|関税|地政学|下押し|厳しい|厳しさ/;
 
+/**
+ * 文として読めるか。PDFの表は項目名がつながった断片になり（例：「…減損損失 53 -固定資産売却損益…」）、
+ * 句読点を含まない。こうした断片はリスク記述やトーンの判定に数えない。
+ */
+const isProse = (s: string) => /[。、]/.test(s);
+
 /** 業績予想の前提（為替・市況・計画値）を語る文。 */
 const PREMISE_TERMS = /前提|想定|為替レート|ドル[=＝]|ユーロ[=＝]|見通し|業績予想|通期計画|ガイダンス/;
 
@@ -37,26 +43,49 @@ export const THRESHOLDS = {
   premiseChanges: 2,
 } as const;
 
+export interface DigestHistory {
+  /**
+   * 資料の種類の違いで毎年起きる変化か（前年同期の資料と照らして判定）。
+   * 例：通期→第1四半期で配当方針の文が消えるのは毎年のことで、異変ではない。
+   */
+  isRoutine(change: Change): boolean;
+  /** 長く書かれ続けてきた文か（直近の資料の大半に載っていた）。 */
+  isLongStanding(change: Change): boolean;
+}
+
 /** ビルド時に1件のレポートから要約指標を作る（scripts/build-reports.ts から使う）。 */
-export function computeDigest(result: AnalysisResult): CoreDigest {
+export function computeDigest(result: AnalysisResult, history?: DigestHistory): CoreDigest {
   let riskAdded = 0;
   let positiveRemoved = 0;
   let premiseChanges = 0;
+  let routine = 0;
+  let realRewrites = 0;
+  let longStandingRemoved = 0;
   for (const c of result.changes) {
+    if (c.kind !== "numeric" && history?.isRoutine(c)) {
+      routine++;
+      continue;
+    }
+    if (c.kind === "added" || c.kind === "rephrased") realRewrites++;
+    if (c.kind === "removed" && history?.isLongStanding(c)) longStandingRemoved++;
     const after = c.after ?? "";
     const before = c.before ?? "";
-    if (c.kind === "added" && (RISK_TERMS.test(after) || c.toneDelta < 0)) riskAdded++;
-    if (c.kind === "rephrased" && RISK_TERMS.test(after) && !RISK_TERMS.test(before)) riskAdded++;
-    if ((c.kind === "removed" || c.kind === "rephrased") && c.toneDelta < 0) positiveRemoved++;
+    if (c.kind === "added" && isProse(after) && (RISK_TERMS.test(after) || c.toneDelta < 0)) riskAdded++;
+    if (c.kind === "rephrased" && isProse(after) && RISK_TERMS.test(after) && !RISK_TERMS.test(before)) riskAdded++;
+    if ((c.kind === "removed" || c.kind === "rephrased") && isProse(before) && c.toneDelta < 0) positiveRemoved++;
     if ((c.kind === "numeric" || c.kind === "rephrased") && (PREMISE_TERMS.test(after) || PREMISE_TERMS.test(before)))
       premiseChanges++;
   }
+  // changeRatio counts new and reworded sentences; keep only the share that is not routine.
+  const rewrites = result.counts.added + result.counts.rephrased;
+  const changeRatio = rewrites > 0 ? (result.changeRatio * realRewrites) / rewrites : 0;
   return {
-    changes: result.changes.length - result.counts.numeric,
-    changeRatio: Math.round(result.changeRatio * 1000) / 1000,
+    changes: result.changes.length - result.counts.numeric - routine,
+    changeRatio: Math.round(changeRatio * 1000) / 1000,
     riskAdded,
     positiveRemoved,
     premiseChanges,
+    ...(history ? { routine, longStandingRemoved } : {}),
   };
 }
 
@@ -102,6 +131,7 @@ export function analyzeCompany(c: CoreCompany): CompanyInsight {
   let summary: string;
   if (negativeSignal) summary = `${negativeSignal.label}が「${negativeSignal.after}」に変化`;
   else if (anomalies.includes("risk") && d) summary = `リスク関連の記述が${d.riskAdded}文増加`;
+  else if (d?.longStandingRemoved) summary = `長く続いた記述が${d.longStandingRemoved}文消えた`;
   else if (anomalies.includes("toneDown"))
     summary = labelDown ? `トーンが${tone.before}→${tone.after}に後退` : `表現のトーンが${Math.abs(delta)}pt低下`;
   else if (anySignal) summary = `${anySignal.label}が「${anySignal.after}」に変化`;
@@ -111,7 +141,7 @@ export function analyzeCompany(c: CoreCompany): CompanyInsight {
   const extras = [
     d && anomalies.includes("risk") && !summary.includes("リスク") ? `リスク記述+${d.riskAdded}` : null,
     anomalies.includes("toneDown") && !summary.includes("トーン") ? `トーン${delta}pt` : null,
-    d ? `書換率${Math.round(d.changeRatio * 100)}%` : null,
+    d && !summary.includes("書き換え") ? `書換率${Math.round(d.changeRatio * 100)}%` : null,
   ].filter((x): x is string => x !== null);
   for (const extra of extras) {
     if (Array.from(summary).length >= 15) break;
@@ -119,8 +149,9 @@ export function analyzeCompany(c: CoreCompany): CompanyInsight {
     if (Array.from(next).length <= 20) summary = next;
   }
 
+  // A sentence kept for years and then dropped is the strongest wording signal we have.
   const score = d
-    ? d.changeRatio
+    ? d.changeRatio + (d.longStandingRemoved ?? 0) * 0.05
     : Math.abs(delta) / 100 + c.signals.length * 0.1 + (anomalies.includes("steady") ? 0 : 0.05);
 
   return { ...base, anomalies, summary: clamp(summary, 20), score, changeRatio: d?.changeRatio ?? null, tone, hasData: true };

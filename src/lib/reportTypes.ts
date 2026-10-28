@@ -68,6 +68,14 @@ export interface CoreDigest {
   positiveRemoved: number;
   /** Rewritten sentences about forecast premises (FX, assumptions, plans). */
   premiseChanges: number;
+  /**
+   * Changes left out of the counts above because they happen every year with the
+   * document type (checked against the same quarter of the previous year).
+   * Missing when no previous-year document was available.
+   */
+  routine?: number;
+  /** Removed sentences that had appeared in most of the recent documents. */
+  longStandingRemoved?: number;
 }
 
 export interface Core30Index {
@@ -79,6 +87,11 @@ export interface Core30Index {
     toneBefore: number | null;
     toneAfter: number | null;
     signals: ComparisonSummary["signals"];
+    /**
+     * Comparison the tone and signals come from. "yoy" (same quarter last year) compares
+     * documents of the same type; missing means the older "qoq" basis.
+     */
+    toneBasis?: ComparisonKind;
     periods: number;
     hasPresentation: boolean;
     /** Missing in indexes built before the DeltaLens redesign. */
