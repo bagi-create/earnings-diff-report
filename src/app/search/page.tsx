@@ -66,9 +66,11 @@ export default async function SearchPage({ searchParams }: Props) {
   // 2. Only the documents on this page are read, to confirm the exact phrase and cut excerpts.
   const shown = candidates.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
   const texts = await Promise.all(shown.map((d) => readReport(docTextKey(d.id))));
-  const results: Array<{ doc: DocMeta; match: DocMatch }> = [];
+  // A document whose text is not uploaded yet is still listed (index hit, PDF link) without excerpts.
+  const results: Array<{ doc: DocMeta; match: DocMatch | null }> = [];
   shown.forEach((doc, i) => {
-    const match = texts[i] ? matchDocument(texts[i]!, terms) : null;
+    if (!texts[i]) return results.push({ doc, match: null });
+    const match = matchDocument(texts[i]!, terms);
     if (match) results.push({ doc, match });
   });
   const total = candidates.length;
@@ -203,12 +205,17 @@ export default async function SearchPage({ searchParams }: Props) {
                         {TYPE_LABEL[doc.type]}・{doc.official}
                       </span>
                     </div>
-                    <span className="text-xs text-zinc-400">
-                      「{terms[0]}」{match.count}回
-                    </span>
+                    {match ? (
+                      <span className="text-xs text-zinc-400">
+                        「{terms[0]}」{match.count}回
+                      </span>
+                    ) : null}
                   </div>
+                  {!match ? (
+                    <p className="m-0 mt-3 text-sm text-zinc-500">抜粋は準備中です。原文のPDFでご確認ください。</p>
+                  ) : null}
                   <ul className="m-0 mt-3 grid list-none gap-2 p-0">
-                    {match.excerpts.map((e, i) => (
+                    {(match?.excerpts ?? []).map((e, i) => (
                       <li
                         key={i}
                         className="border-l-2 border-zinc-700 pl-3 text-sm leading-relaxed text-zinc-300 [overflow-wrap:anywhere]"
